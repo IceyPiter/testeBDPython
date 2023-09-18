@@ -4,5 +4,6 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home)
+    path('', views.home, name="home"),
+    path('cadastrar_user/', views.cadastrar_user, name="cadastrar_user")
 ]

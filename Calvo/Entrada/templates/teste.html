@@ -7,6 +7,12 @@
     <title>AII CALVOO</title>
 </head>
 <body>
-    <h1>A Calvice é uma dadiva</h1>
+    <form action="{% url 'cadastrar_user' %}" method="post">
+        {% csrf_token %}
+        <input name="user" type="text" placeholder="Nome de Usúario: ">
+        <input name="password" type="password" placeholder="Senha de Usúario: ">
+        <input name="mail" type="email" placeholder="Email de Usúario: ">
+        <button>ENVIAR</button>
+    </form>
 </body>
 </html>
