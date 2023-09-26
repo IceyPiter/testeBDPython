@@ -7,10 +7,10 @@
     <title>AII CALVOO</title>
 </head>
 <body>
-    <form action="{% url 'mandar_msg' %}" method="post">
+    <form action="{% url 'realizar_login' %}" method="post">
         {% csrf_token %}
-        <input name="msg" type="text" placeholder="Mensagem:" required>
-        <input name="id" type="number" placeholder="ID:" required>
+        <input name="name" type="text" placeholder="Nome:" required>
+        <input name="password" type="text" placeholder="Senha:" required>
         <button>ENVIAR</button>
     </form>
 </body>
