@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&display=swap');
+
+#login-box{
+    background-color: rgb(32, 32, 32, .571);
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+.btn{
+    background-color: rgb(255, 133, 18);
+    color: white;
+}
+
+.home{
+    font-family: 'Playfair Display', serif;
+}
