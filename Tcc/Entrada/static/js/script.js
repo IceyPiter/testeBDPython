@@ -1,9 +1,14 @@
 function setLogOut(){
     listUser = document.getElementById("elementsUser")
-    user = document.getElementById("Registrar-se")
+    alert("AAAAAAAAAAAAAAAAAAAAAaa")
+    user = document.getElementById("Registrar")
+    teste = document.getElementById("Registrar").value
+    alert("AAAAAAAAAAAAAAAAAAAAAaa")
+    alert(teste)
     if(user == "Registrar-se"){
-        continue
+        return
     }else{
+        user.setAttribute("href", "{% url 'mandar_msg' %}")
         let logOut = document.createElement("li");
         let logOut2 = document.createElement("a");
         logOut.appendChild(logOut2)

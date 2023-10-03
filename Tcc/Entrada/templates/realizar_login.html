@@ -25,13 +25,13 @@
                     <h1 id="texts" class="pb-3 text-center">Faça seu login</h1>
                     <div class="mb-3">
                         <label for="" class="form-label">Email</label>
-                        <input type="text" name="name" class="form-control" placeholder="Username ou Email" required>
+                        <input type="text" name="name" class="form-control" value="{{nome}}" placeholder="Username ou Email" required>
                     </div>
                     <div class="mb-1">
                         <label for="" class="form-label">Senha</label>
                         <input type="password" name="password" class="form-control" placeholder="senha" required>
                     </div>
-                    <span class="h5 fw-light">{{erro}}</span>
+                    <span class="h6 fw-light" style="color:rgb(255, 133, 18);">{{erro}}</span>
                     <div class="text-center my-3">
                         <button type="submit" class="btn">Entrar</button>
                     </div>

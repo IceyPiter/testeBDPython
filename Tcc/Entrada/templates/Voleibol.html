@@ -21,14 +21,14 @@
           -- Usuário --
         </a>
         <ul id="elementsUser" class="dropdown-menu text-white fw-light" style="background-color: #e98b10d7;" aria-labelledby="navbarDropdown">
-          <li><a onload="setLogOut()" id="Login" class="ms-2" href="{% url 'openLogin' %}">{{ caso1 }}</a></li>
+          <li><a id="Login" class="ms-2" href="{% url 'openLogin' %}">{{ caso1 }}</a></li>
           <li><a id="Registrar" class="ms-2" href="{% url 'openUser' %}">{{ caso2 }}</a></li>
         </ul>
       </li>        
     </div>
   </div>
       <!--Início Barra de Navegação-->
-      <nav class="navbar navbar-expand-lg navbar-light p-0">
+      <nav onload="setLogOut()" class="navbar navbar-expand-lg navbar-light p-0">
         <div class="barra1 container-fluid">
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>

@@ -20,6 +20,12 @@ def cadastrar_user(request):
     senhaForm = request.POST.get("password")
     emailForm = request.POST.get("mail")
 
+    users = User.objects.all()
+    for i in users:
+        if i.nome == nomeForm or i.email == nomeForm:
+            erro = "!!  Este usuário já existe  !!"
+            return render(request, 'cadastrar_user.html', {"erro": erro})
+        
     usuario = User(nome=nomeForm,
                 password=senhaForm,
                 email=emailForm)
@@ -29,7 +35,7 @@ def cadastrar_user(request):
     # usuarios = User.objects.all()
     # users = {"user": usuarios}
 
-    return render(request, 'Voleibol.html')
+    return render(request, 'Voleibol.html', {"caso1":nomeForm, "caso2": "Configurações"})
 
 def envia_msg(request):
     mensagemForm = request.POST.get("msg")
@@ -62,7 +68,4 @@ def realizar_login(request):
         else:
             pass
 
-    return render(request, 'realizar_login.html', {"erro": "Usuário ou Senha Incorretos!!"})
-    
-
-    
+    return render(request, 'realizar_login.html', {"erro": "Usuário ou Senha Incorretos!!","nome": nomeForm}) 
