@@ -2,16 +2,9 @@ import email
 from django.shortcuts import render
 from .models import *
 
-global NumCaso
-NumCaso = 1
-
 # Create your views here.
 def home(request):
-    if NumCaso == 1:
-        caso1 = "Login"
-        caso2 = "Registrar-se"
-        NumCaso += 1
-    return render(request,'Voleibol.html',{"caso1": caso1, "caso2": caso2})
+    return render(request,'Voleibol.html',{"caso1": "Login", "caso2": "Registrar-se"})
 
 def openUser(request):
     return render(request,'cadastrar_user.html')
@@ -33,10 +26,10 @@ def cadastrar_user(request):
 
     usuario.save()
 
-    usuarios = User.objects.all()
-    users = {"user": usuarios}
+    # usuarios = User.objects.all()
+    # users = {"user": usuarios}
 
-    return render(request, 'listUser.html', users)
+    return render(request, 'Voleibol.html')
 
 def envia_msg(request):
     mensagemForm = request.POST.get("msg")
@@ -55,12 +48,21 @@ def envia_msg(request):
 def realizar_login(request):
     nomeForm = request.POST.get("name")
     senhaForm = request.POST.get("password")
+    print(nomeForm)
+    print(senhaForm)
 
     users = User.objects.all()
-    teste = {"content": users}
 
-    if nomeForm in teste["content"]:
-        teste = [nomeForm]
+    for i in users:
+        if i.nome == nomeForm or i.email == nomeForm:
+            if i.password == senhaForm:
+                i.login = True
+                i.save()
+                return render(request, 'Voleibol.html', {"caso1": nomeForm, "caso2": "Configurações"})
+        else:
+            pass
+
+    return render(request, 'realizar_login.html', {"erro": "Usuário ou Senha Incorretos!!"})
     
 
-    return render(request, 'listUser.html', teste)
+    

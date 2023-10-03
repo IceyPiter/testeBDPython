@@ -11,4 +11,5 @@ urlpatterns = [
     path('mandar_msg/', views.envia_msg, name="mandar_msg"),
     path('cadastrar_user/', views.cadastrar_user, name="cadastrar_user"),
     path('realizar_login/', views.realizar_login, name="realizar_login"),
+    path('deslogar/<str:nomeusuario>', views.realizar_login, name="deslogar"),
 ]

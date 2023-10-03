@@ -1,4 +1,3 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,9 +15,16 @@
   <div class="barra container-fluid d-flex">  
     <img class="img-navbar d-inline-block" src="../static/img/Volleyball-logo.png" alt="">
     <h3 class="text-white fw-light ms-3">WebVolei</h3>
-    <div class="login container-fluid">        
-      <a id="Login" class="text-white fw-light me-3" href="{% url 'openLogin' %}">{{ caso1 }}</a>
-      <a id="Registrar" class="text-white fw-light" href="{% url 'openUser' %}">{{ caso2 }}</a>
+    <div class="login container-fluid" style="margin-right: 60px;">
+      <li class="nav-item dropdown d-flex align-items-center">
+        <a class="nav-item nav-link dropdown-toggle" id="texto-teste"  href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          -- Usuário --
+        </a>
+        <ul id="elementsUser" class="dropdown-menu text-white fw-light" style="background-color: #e98b10d7;" aria-labelledby="navbarDropdown">
+          <li><a onload="setLogOut()" id="Login" class="ms-2" href="{% url 'openLogin' %}">{{ caso1 }}</a></li>
+          <li><a id="Registrar" class="ms-2" href="{% url 'openUser' %}">{{ caso2 }}</a></li>
+        </ul>
+      </li>        
     </div>
   </div>
       <!--Início Barra de Navegação-->

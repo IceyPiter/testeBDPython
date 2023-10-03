@@ -13,25 +13,25 @@
     <link rel="stylesheet" href="../static/css/css-espec/css-login.css">
 </head>
 
-<body style="background-image: url(../static/img/bola.jpg);">
+<body style="background-image: url(../static/img/bola.jpg); background-size: cover; background-repeat: no-repeat;">
     <!-- CONTAINER DO LOGIN -->
         <div class="container d-flex align-items-center justify-content-center" style="height: 100vh;">
             <div class="home h4 fixed-top mt-3 ms-4 text-white fw-light">
                 <a href="{% url 'home' %}">Home</a>  
             </div>
             <div class="col-xs-12 col-sm-12 col-md-4">
-                <form id="login-box" class="p-3 text-light" action="" method="post">
+                <form id="login-box" class="p-3 text-light" action="{% url 'realizar_login' %}" method="post">
                     {% csrf_token %}
-                    <h1 class="pb-3 text-center">Faça seu login</h1>
+                    <h1 id="texts" class="pb-3 text-center">Faça seu login</h1>
                     <div class="mb-3">
                         <label for="" class="form-label">Email</label>
-                        <input type="text" name="email" class="form-control" placeholder="Username ou Email" required>
+                        <input type="text" name="name" class="form-control" placeholder="Username ou Email" required>
                     </div>
                     <div class="mb-1">
                         <label for="" class="form-label">Senha</label>
-                        <input type="password" name="senha" class="form-control" placeholder="senha" required>
+                        <input type="password" name="password" class="form-control" placeholder="senha" required>
                     </div>
-                    <span class="text-danger">{{erro}}</span>
+                    <span class="h5 fw-light">{{erro}}</span>
                     <div class="text-center my-3">
                         <button type="submit" class="btn">Entrar</button>
                     </div>
