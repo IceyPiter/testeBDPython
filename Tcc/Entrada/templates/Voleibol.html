@@ -21,14 +21,21 @@
           -- Usuário --
         </a>
         <ul id="elementsUser" class="dropdown-menu text-white fw-light" style="background-color: #e98b10d7;" aria-labelledby="navbarDropdown">
+          {% if caso1 == "Login" %}
+          <li><a id="Login" class="ms-2" href="{% url 'openLogin' %}">Login</a></li>
+          <li><a id="Registrar" class="ms-2" href="{% url 'openUser' %}">Registrar-se</a></li>
+          {% endif %}
+          {% if caso1 != "Login" %}
           <li><a id="Login" class="ms-2" href="{% url 'openLogin' %}">{{ caso1 }}</a></li>
           <li><a id="Registrar" class="ms-2" href="{% url 'openUser' %}">{{ caso2 }}</a></li>
+          <li><a id="LogOut" class="ms-2" href="{% url 'deslogar<caso1>' %}">LogOut</a></li>
+          {% endif %}
         </ul>
       </li>        
     </div>
   </div>
       <!--Início Barra de Navegação-->
-      <nav onload="setLogOut()" class="navbar navbar-expand-lg navbar-light p-0">
+      <nav class="navbar navbar-expand-lg navbar-light p-0">
         <div class="barra1 container-fluid">
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -36,18 +43,18 @@
           <div class="collapse navbar-collapse" id="navbarScroll">
             <ul class="linha container-fluid navbar-nav me-auto my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 300px;">
               <li class="nav-item"> 
-                <a class="nav-item nav-link" id="texto-teste" href="paginas/Historia.html">História</a>
+                <a class="nav-item nav-link" id="texto-teste" href="{% url 'openHistory' %}">História</a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-item nav-link dropdown-toggle me-1" id="texto-teste"  href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Fundamentos
                 </a>
                 <ul class="dropdown-menu" style="background-color: #192a50d7;" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item text-white" href="paginas/Fundamentos.html#Saque">Saque</a></li>
-                  <li><a class="dropdown-item text-white" href="paginas/Fundamentos.html#Recepcao">Recepção</a></li>
-                  <li><a class="dropdown-item text-white" href="paginas/Fundamentos.html#Levantamento">Levantamento</a></li>
-                  <li><a class="dropdown-item text-white" href="paginas/Fundamentos.html#Ataque">Ataque</a></li>
-                  <li><a class="dropdown-item text-white" href="paginas/Fundamentos.html#Bloqueio">Bloqueio</a></li>
+                  <li><a class="dropdown-item text-white" href="{% url 'openFundamentos' %}">Saque</a></li>
+                  <li><a class="dropdown-item text-white" href="{% url 'openFundamentos' %}">Recepção</a></li>
+                  <li><a class="dropdown-item text-white" href="{% url 'openFundamentos' %}">Levantamento</a></li>
+                  <li><a class="dropdown-item text-white" href="{% url 'openFundamentos' %}">Ataque</a></li>
+                  <li><a class="dropdown-item text-white" href="{% url 'openFundamentos' %}">Bloqueio</a></li>
                 </ul>
               </li>
               <li class="nav-item">
@@ -63,10 +70,6 @@
                 <a class="nav-item nav-link" id="texto-teste" style="width: 180px;" href="#">Chat da Comunidade</a>
               </li>
               <div id="form" class="container-xxl justify-content-end">
-                <!-- <form class="form-pesquisa d-flex">
-                  <input class="form-control" type="search" placeholder="Pesquise aqui" aria-label="Search">
-                  <button type="button" class="btn btn-outline-light" id="search"><i data-feather="search"></i></button>
-                </form> -->
              </div>
             </ul>
           </div>

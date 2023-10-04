@@ -12,6 +12,12 @@ def openUser(request):
 def openMsg(request):
     return render(request,'mandar_msg.html')
 
+def openHistory(request):
+    return render(request,'Historia.html')
+
+def openFundamentos(request):
+    return render(request,'Fundamentos.html')
+
 def openLogin(request):
     return render(request,'realizar_login.html',{"meunome": "Pedro"})
 
@@ -64,8 +70,11 @@ def realizar_login(request):
             if i.password == senhaForm:
                 i.login = True
                 i.save()
-                return render(request, 'Voleibol.html', {"caso1": nomeForm, "caso2": "Configurações"})
+                return render(request, 'Voleibol.html', {"caso1": i.nome, "caso2": "Configurações"})
         else:
             pass
 
     return render(request, 'realizar_login.html', {"erro": "Usuário ou Senha Incorretos!!","nome": nomeForm}) 
+
+def deslogar(request):
+    pass
