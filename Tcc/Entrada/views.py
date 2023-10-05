@@ -1,5 +1,8 @@
+import smtplib
+import email.message
 from django.shortcuts import render, redirect
 from .models import *
+from random import randint
 
 # Create your views here.
 def home(request):
@@ -79,3 +82,35 @@ def deslogar(request, nomeusuario):
         parametro.save()
         return redirect('/')
     return render(request,'realizar_login.html')
+
+def gerarCode():
+    code = ""
+    for i in range(0,5):
+        code += str(randint(0,9))
+    return code
+
+def recuperarSenha(request):
+    print("A")
+    userForm = request.POST.get("nome")
+    parametro = User.objects.get(nome = userForm)
+
+    corpo_email = f"""
+    Seu código de recuperação é *{gerarCode()}*
+    """
+    
+    remetente = "voleiboltccif@gmail.com"
+    msg = email.message.Message()
+    msg['Subject'] = "Isso é um teste"
+    msg['From'] = remetente#'remetente'
+    msg['To'] = parametro.email
+    password = 'bbfz gjgr cqsy xuuq'#'senha'#nao e a senha do seu email
+    
+    msg.add_header('Content-Type', 'text/html')
+    msg.set_payload(corpo_email )
+
+    s = smtplib.SMTP('smtp.gmail.com: 587')
+    s.starttls()
+    # Login Credentials for sending the mail
+    s.login(msg['From'], password)
+    s.sendmail(msg['From'], [msg['To']], msg.as_string().encode('utf-8'))
+    print('Email enviado')

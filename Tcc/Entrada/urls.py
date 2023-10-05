@@ -14,4 +14,5 @@ urlpatterns = [
     path('cadastrar_user/', views.cadastrar_user, name="cadastrar_user"),
     path('realizar_login/', views.realizar_login, name="realizar_login"),
     path('deslogar/<str:nomeusuario>', views.deslogar, name="deslogar"),
+    path('recuperarSenha/', views.recuperarSenha, name="recuperarSenha"),
 ]
