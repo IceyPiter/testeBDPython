@@ -23,6 +23,9 @@ def openFundamentos(request):
 def openLogin(request):
     return render(request,'realizar_login.html')
 
+def openConf(request):
+    return render(request,'configuracao.html', {"caso": 1})
+
 def cadastrar_user(request):
     nomeForm = request.POST.get("user")
     senhaForm = request.POST.get("password")
@@ -83,7 +86,9 @@ def deslogar(request, nomeusuario):
         return redirect('/')
     return render(request,'realizar_login.html')
 
-def gerarCode():
+global code
+
+def gerarCode(): 
     code = ""
     for i in range(0,5):
         code += str(randint(0,9))
@@ -95,9 +100,10 @@ def recuperarSenha(request):
     parametro = User.objects.get(nome = userForm)
 
     corpo_email = f"""
-    Seu código de recuperação é *{gerarCode()}*
+    Seu código de recuperação é {gerarCode()}
     """
     
+    print(parametro.email)
     remetente = "voleiboltccif@gmail.com"
     msg = email.message.Message()
     msg['Subject'] = "Isso é um teste"
@@ -113,4 +119,5 @@ def recuperarSenha(request):
     # Login Credentials for sending the mail
     s.login(msg['From'], password)
     s.sendmail(msg['From'], [msg['To']], msg.as_string().encode('utf-8'))
-    print('Email enviado')
+
+    return redirect('configuracao/',{"caso":2})

@@ -15,4 +15,5 @@ urlpatterns = [
     path('realizar_login/', views.realizar_login, name="realizar_login"),
     path('deslogar/<str:nomeusuario>', views.deslogar, name="deslogar"),
     path('recuperarSenha/', views.recuperarSenha, name="recuperarSenha"),
+    path('openConf/', views.openConf, name="openConf"),
 ]

@@ -1,85 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Voleibol</title>
-    <script src="https://unpkg.com/feather-icons"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="icon" href="../assets/Volleyball-logo.png">
-    <link rel="stylesheet" href="../static/css/stylePrincipalPage.css"></link>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <meta name="description" content="Site sobre Voleibol - TCC, Informática">
+    <link rel="icon" href="../static/img/Volleyball-logo.png">
+    <title>Login</title>
+    <link rel="stylesheet" href="../static/css/css-login.css">
 </head>
+
 <body>
-  <div class="barra container-fluid d-flex">  
-    <img class="img-navbar d-inline-block" src="../static/img/Volleyball-logo.png" width="30" height="30" alt="">
-    <h3 class="text-white fw-light ms-3">WebVolei</h3>
-    <div class="login container-fluid">
-      <a class="text-white fw-light me-3" >Login</a>
-      <a class="text-white fw-light" href="#">Registrar-se</a>
-    </div>
-  </div>
-  <nav class="navbar navbar-expand-lg navbar-light p-0">
-    <div class="barra1 container-fluid">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarScroll">
-        <ul class="linha container-fluid navbar-nav me-auto my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 300px;">
-          <li class="nav-item"> 
-            <a class="nav-item nav-link" id="texto-teste" href="../Voleibol.html">Home</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-item nav-link dropdown-toggle me-1" id="texto-teste"  href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Fundamentos
-            </a>
-            <ul class="dropdown-menu" style="background-color: #192a50d7;" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item text-white" href="Fundamentos.html#Saque">Saque</a></li>
-              <li><a class="dropdown-item text-white" href="Fundamentos.html#Recepcao">Recepção</a></li>
-              <li><a class="dropdown-item text-white" href="Fundamentos.html#Levantamento">Levantamento</a></li>
-              <li><a class="dropdown-item text-white" href="Fundamentos.html#Ataque">Ataque</a></li>
-              <li><a class="dropdown-item text-white" href="Fundamentos.html#Bloqueio">Bloqueio</a></li>
-            </ul>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-item nav-link" id="texto-teste" href="#">Funções</a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-item nav-link" id="texto-teste" href="#">Formações</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-item nav-link" href="#" style="width: 120px;" id="texto-teste">Brasil no Vôlei</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-item nav-link" href="#" id="texto-teste">Regras</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-item nav-link" href="#" id="texto-teste">Referências</a>
-          </li>
-          <div id="form" class="container-xxl justify-content-end">
-         </div>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  <div>
-    <h3>Configurações</h3>
-  </div>
-  <!--Fim Barra de Navegação-->
-  <footer class="container-fluid bg-dark">
-    <div class="text-white fw-light">
-        <div class="text-center">
-          <div class="text-center d-flex justify-content-center">
-            <div class="me-3 mt-2"><h5 style="font-size: larger;">Contatos: </h5></div>
-            <div class="me-3 mt-2"><a href="https://github.com/IceyPiter"><i data-feather="github"></i> GitHub</a></div>
-            <div class="me-3 mt-2"><a href="https://twitter.com/MoraesMichalski?t=QQjbt5rUnsjlaBzuRChZ4g&s=09"><i data-feather="twitter"></i> Twitter</a></div>
-            <div class="me-3 mt-2"><a href="https://instagram.com/dpedromichalski?utm_source=qr&iqshid=MzNINGNkZWQ4Mg%3D%3D"><i data-feather="instagram"></i> Instagram</a></div>
+    <!-- CONTAINER DO LOGIN -->
+        {% if caso == 1 %}
+        <div class="container d-flex align-items-center justify-content-center" style="height: 100vh;">
+          <div class="home h4 fixed-top mt-3 ms-4 text-white fw-light">
+              <a href="{% url 'home' %}">Home</a>  
           </div>
-          <h5 style="font-size:13px; font-style: oblique; font-weight: lighter; margin-top: 10px;">Developed By Piter &#169 2023</h5>
+          <div class="col-xs-12 col-sm-12 col-md-4">
+              <form id="login-box" class="p-3 text-light" action="{% url 'recuperarSenha' %}" method="post">
+                  {% csrf_token %}
+                  <h1 id="texts" class="pb-3 text-center">Redefinir Senha</h1>
+                  <div class="mb-3">
+                      <label for="" class="form-label">Username ou Email</label>
+                      <input type="text" name="nome" class="form-control" placeholder="Username ou Email" required>
+                  </div>
+                  <span class="h6 fw-light" style="color:rgb(255, 133, 18);">{{erro}}</span>
+                  <div class="text-center my-3">
+                      <button type="submit" class="btn">Entrar</button>
+                  </div>
+              </form>
+          </div>
         </div>
-    </div>
-  </footer>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-<script>feather.replace()</script>
+        {% endif %}
+        {% if caso == 2 %}
+        <div class="container d-flex align-items-center justify-content-center" style="height: 100vh;">
+          <div class="home h4 fixed-top mt-3 ms-4 text-white fw-light">
+              <a href="{% url 'home' %}">Home</a>  
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-4">
+              <form id="login-box" class="p-3 text-light" action="{% url 'realizar_login' %}" method="post">
+                  {% csrf_token %}
+                  <h1 id="texts" class="pb-3 text-center">Insira o Código do Email</h1>
+                  <div class="mb-3">
+                      <label for="" class="form-label">Código</label>
+                      <input type="text" name="code" class="form-control" placeholder="Código Aqui" required>
+                  </div>
+                  <span class="h6 fw-light" style="color:rgb(255, 133, 18);">{{erro}}</span>
+                  <div class="text-center my-3">
+                      <button type="submit" class="btn">Entrar</button>
+                  </div>
+              </form>
+          </div>
+        </div>
+        <!-- Fim Modal 2 -->
+        {% endif %}
+
+    <!-- FOOTER -->
+    <footer class="text-dark fixed-bottom text-center text-light d-flex align-items-center justify-content-center" style="font-size: 15px; height: 8vh;">
+        Voleibol &copy2023 <i class="bi bi-github"></i>
+    </footer>
+
+    <!-- BOOTSTRAP JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>
