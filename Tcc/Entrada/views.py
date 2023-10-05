@@ -1,5 +1,4 @@
-import email
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import *
 
 # Create your views here.
@@ -19,7 +18,7 @@ def openFundamentos(request):
     return render(request,'Fundamentos.html')
 
 def openLogin(request):
-    return render(request,'realizar_login.html',{"meunome": "Pedro"})
+    return render(request,'realizar_login.html')
 
 def cadastrar_user(request):
     nomeForm = request.POST.get("user")
@@ -37,9 +36,6 @@ def cadastrar_user(request):
                 email=emailForm)
 
     usuario.save()
-
-    # usuarios = User.objects.all()
-    # users = {"user": usuarios}
 
     return render(request, 'Voleibol.html', {"caso1":nomeForm, "caso2": "Configurações"})
 
@@ -76,5 +72,10 @@ def realizar_login(request):
 
     return render(request, 'realizar_login.html', {"erro": "Usuário ou Senha Incorretos!!","nome": nomeForm}) 
 
-def deslogar(request):
-    pass
+def deslogar(request, nomeusuario):
+    parametro = User.objects.get(nome = nomeusuario)
+    if parametro.login == True:
+        parametro.login = False
+        parametro.save()
+        return redirect('/')
+    return render(request,'realizar_login.html')

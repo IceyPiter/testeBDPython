@@ -28,7 +28,7 @@
           {% if caso1 != "Login" %}
           <li><a id="Login" class="ms-2" href="{% url 'openLogin' %}">{{ caso1 }}</a></li>
           <li><a id="Registrar" class="ms-2" href="{% url 'openUser' %}">{{ caso2 }}</a></li>
-          <li><a id="LogOut" class="ms-2" href="{% url 'deslogar<caso1>' %}">LogOut</a></li>
+          <li><a id="LogOut" class="ms-2" href="{% url 'deslogar' caso1 %}">LogOut</a></li>
           {% endif %}
         </ul>
       </li>        
@@ -50,11 +50,11 @@
                   Fundamentos
                 </a>
                 <ul class="dropdown-menu" style="background-color: #192a50d7;" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item text-white" href="{% url 'openFundamentos' %}">Saque</a></li>
-                  <li><a class="dropdown-item text-white" href="{% url 'openFundamentos' %}">Recepção</a></li>
-                  <li><a class="dropdown-item text-white" href="{% url 'openFundamentos' %}">Levantamento</a></li>
-                  <li><a class="dropdown-item text-white" href="{% url 'openFundamentos' %}">Ataque</a></li>
-                  <li><a class="dropdown-item text-white" href="{% url 'openFundamentos' %}">Bloqueio</a></li>
+                  <li><a class="dropdown-item text-white" href="{% url 'openFundamentos' %}#Saque">Saque</a></li>
+                  <li><a class="dropdown-item text-white" href="{% url 'openFundamentos' %}#Recepcao">Recepção</a></li>
+                  <li><a class="dropdown-item text-white" href="{% url 'openFundamentos' %}#Levantamento">Levantamento</a></li>
+                  <li><a class="dropdown-item text-white" href="{% url 'openFundamentos' %}#Ataque">Ataque</a></li>
+                  <li><a class="dropdown-item text-white" href="{% url 'openFundamentos' %}#Bloqueio">Bloqueio</a></li>
                 </ul>
               </li>
               <li class="nav-item">
@@ -109,80 +109,62 @@
       </div>
       <!--Início Carousel Noticias-->
       <div id="carousel-1" class="d-flex">
-        <div id="carouselExampleControls" class="carousel slide ms-3" style="width:1000px;"  data-bs-ride="carousel">
+        <div id="carouselExampleDark" class="carousel carousel-dark slide ms-3" style="width:1000px;" data-bs-ride="carousel">
           <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
           </div>
-          <div  class="carousel-inner container-fluid">
-            <div id="carousel-border" class="carousel-item active">
+          <div class="carousel-inner container-fluid">
+            <div class="carousel-item active" id="carousel-border" data-bs-interval="2000">
               <img src="../static/img/noticia7.jpg" class="d-block w-100" data-bs-interval="500" height="623.36" alt="...">
-              <div class="carousel-caption d-none d-md-block" id="carousel-text">
+              <div class="carousel-caption d-none d-md-block text-white" id="carousel-text">
                 <h5>Defendendo o título</h5>
                 <p>Convocados para defender o Brasil na Copa Pan-Americana, Thierry e Lukas Bergmann disputam o CBI sub-21 pelo Sesi-SP.</p>
               </div>
             </div>
-            <div id="carousel-border" class="carousel-item">
+            <div class="carousel-item" id="carousel-border" data-bs-interval="2000">
               <img src="../static/img/noticia8.jpg" class="d-block w-100" data-bs-interval="500" height="623.36" alt="...">
-              <div class="carousel-caption d-none d-md-block" id="carousel-text">
+              <div class="carousel-caption d-none d-md-block text-white" id="carousel-text">
                 <h5>As mais jovens</h5>
                 <p>Aos 14 anos, gêmeas baianas são as caçulas da Copa Regional Nordeste 2, que reúne 28 duplas em Recife.</p>
               </div>
             </div>
-            <div id="carousel-border" class="carousel-item">
+            <div class="carousel-item" id="carousel-border" data-bs-interval="2000">
               <img src="../static/img/noticia9.jpg" class="d-block w-100" data-bs-interval="500" height="623.36" alt="...">
-              <div class="carousel-caption d-none d-md-block" id="carousel-text">
+              <div class="carousel-caption d-none d-md-block text-white" id="carousel-text">
                 <h5>Segundo consecutivo</h5>
                 <p>Sesi-SP conquista o bicampeonato do CBI masculino sub-21.</p>
               </div>
             </div>
           </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next text-white" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
         </div>
         <div class="container-xl py-4 w-50 m-4">
           <div class="textos-principalPage text-white text-lg-start">
             <div>
-              <h4 class="text-start mt-2">Vôlei é o esporte que mais desperta algum interesse entre brasileiros conectados</h4>
+              <h4 class="text-start mt-0">Vôlei é o esporte que mais desperta algum interesse entre brasileiros conectados</h4>
               <span class="fw-light">Segundo dados da onda mais recente do Sponsorlink, maior pesquisa especializada em esportes do mundo do IBOPE Repucom, 87% dos brasileiros conectados com 18 anos ou mais se declaram interessados (muito interessados, interessados ou pouco interessados) por Vôlei, o que representa 96 milhões de indivíduos. Em 2013, quando iniciamos a pesquisa, o número de brasileiros conectados que se declaram fãs de vôlei era de 45 milhões, ou seja, o volume de internautas brasileiros interessados pelo esporte dobrou na última década, um crescimento de 113%</span>
               <span class="fw-light">A pesquisa também revela que o Vôlei é um dos esportes mais praticados do País, atingindo 19% dos internautas brasileiros. Índice muito próximo a Corrida de Rua (21%), Andar de Bicicleta (22%) e Jogar Futebol (22%), que lideram a lista das atividades esportivas mais praticadas</span>
             </div>
             <div>
               <h4 class="text-start mt-5">Federação Internacional de Vôlei lança projeto para impulsionar o crescimento global do vôlei</h4>
-              <span class="fw-light">A Federação Internação de Vôlei anunciou no início desta semana, em parceria com uma empresa de consultoria de investimentos e patrimônio privado , o lançamento do Volleyball World. O projeto, que visa impulsionar o vôlei no âmbito global, abrangerá também a inovação, o crescimento e o investimento na modalidade.</span>
-              <span class="fw-light">O Volleyball World se tornará a entidade comercial do vôlei em todo o mundo, com o objetivo de aumentar a visibilidade e popularidade do esporte, através de novos investimentos em benefício dos torcedores, jogadores e federações nacionais. O Volleyball World será responsável pela operação comercial dos principais eventos internacionais do vôlei e vôlei de praia. A parceria terá como foco a criação de eventos, experiência dos fãs, mídia, oportunidades digitais e patrocínio. Tudo para garantir o sucesso da modalidade no longo prazo.</span>
+              <span class="fw-light">O voleibol brasileiro ampliou o império de conquistas pelo mundo em 2010. A seleção masculina conquistou o tricampeonato mundial, na Itália. Com esta conquista, o Brasil tornou-se o maior vencedor da história da competição, ultrapassando a Itália, que acumulava oito conquistas. A seleção feminina, comandada por José Roberto Guimarães, terminou o ano com duas medalhas de prata, uma no Grand Prix outra no Campeonato Mundial. As seleções infanto-juvenil e juvenil femininas e a juvenil masculina conquistaram os Campeonatos Sul-Americanos. A equipe infanto-juvenil masculina ficou com a medalha de prata.</span>
+              <span class="fw-light">Ao todo, o voleibol brasileiro disputou 41 competições e subiu ao pódio 44 vezes, conquistando 15 medalhas de ouro, 14 de prata e 15 de bronze.</span>
             </div>
           </div>
         </div>
       </div>  
       <!--Fim Carousel Noticias-->
       <div class="noticia-1 d-flex justify-content-between mt-3 mb-3">
-        <div class="noticia-item col-lg-3 ms-5">
-          <div class="position-relative">
-              <img src="../static/img/noticia1.jpg" class="img-fluid">
-          </div>
-          <div class="p-2 mt-2">
-              <div class="d-flex justify-content-between mb-3">
-              </div>
-              <div class="d-flex mb-3">
-                  <a id="text-link" class="ms-2" href="https://cbv.com.br/noticia/29565/circuito-mundial-de-volei-de-praia:-duda-e-taina-querem-medalhas-na-etapa-elite-do-canada-como-presentes-de-aniversario">Melhor Presente</a>
-              </div>
-              <p class="text-white mb-4 ms-2">Circuito Mundial de Vôlei de Praia: Duda e Tainá querem medalhas na etapa Elite do Canadá como presentes de aniversário.</p>
-          </div>
-        </div>
         <div class="noticia-item col-lg-3">
-          <div class="position-relative">
-              <img src="../static/img/noticia2.jpg" class="img-fluid">
-          </div>
-          <div class="p-2 mt-2">
-              <div class="d-flex justify-content-between mb-3">
-              </div>
-              <div class="d-flex mb-3">
-                  <a id="text-link" class="ms-2" href="https://cbv.com.br/noticia/29563/lista-de-atletas-convocados-para-copa-pan-americana-2023--">Convocação</a>
-              </div>
-              <p class="text-white mb-4 ms-2">Lista de atletas convocados para Copa Pan-Americana.</p>
-          </div>
-        </div>
-        <div class="noticia-item col-lg-3 me-5">
           <div class="position-relative">
               <img src="../static/img/noticia3.jpg" class="img-fluid">
           </div>
@@ -190,14 +172,12 @@
               <div class="d-flex justify-content-between mb-3">
               </div>
               <div class="d-flex mb-3">
-                  <a id="text-link" class="ms-2" href="https://cbv.com.br/noticia/29528/selecao-feminina-vence-tailandia-no-encerramento-da-fase-classificatoria-da-liga-das-nacoes-2023">Partiu Fase Final</a>
+                  <a id="text-link" class="" href="https://cbv.com.br/noticia/29528/selecao-feminina-vence-tailandia-no-encerramento-da-fase-classificatoria-da-liga-das-nacoes-2023">Partiu Fase Final</a>
               </div>
-              <p class="text-white mb-4 ms-2">Seleção feminina vence Tailândia no encerramento da fase classificarória da Liga das Nações 2023.</p>
+              <p class="text-white mb-4">Seleção feminina vence Tailândia no encerramento da fase classificarória da Liga das Nações 2023.</p>
           </div>
         </div>
-      </div>
-      <div class="noticia-2 d-flex justify-content-between mt-5 mb-5">
-        <div class="noticia-item col-lg-3 ms-5">
+        <div class="noticia-item col-lg-3">
           <div class="position-relative">
               <img src="../static/img/noticia4.jpg" class="img-fluid">
           </div>
@@ -205,25 +185,12 @@
               <div class="d-flex justify-content-between mb-3">
               </div>
               <div class="d-flex mb-3">
-                  <a id="text-link" class="ms-2" href="https://cbv.com.br/noticia/29565/circuito-mundial-de-volei-de-praia:-duda-e-taina-querem-medalhas-na-etapa-elite-do-canada-como-presentes-de-aniversario">De Volta</a>
+                  <a id="text-link" class="" href="https://cbv.com.br/noticia/29565/circuito-mundial-de-volei-de-praia:-duda-e-taina-querem-medalhas-na-etapa-elite-do-canada-como-presentes-de-aniversario">De Volta</a>
               </div>
-              <p class="text-white mb-4 ms-2">Com Leal no  grupo, seleção masculina encara a Polônia pelas quartas de final da Liga das Naçoẽs.</p>
+              <p class="text-white mb-4">Com Leal no  grupo, seleção masculina encara a Polônia pelas quartas de final da Liga das Naçoẽs.</p>
           </div>
         </div>
         <div class="noticia-item col-lg-3">
-          <div class="position-relative">
-              <img src="../static/img/noticia5.jpg" class="img-fluid">
-          </div>
-          <div class="p-2 mt-2">
-              <div class="d-flex justify-content-between mb-3">
-              </div>
-              <div class="d-flex mb-3">
-                  <a id="text-link" class="ms-2" href="https://cbv.com.br/noticia/29563/lista-de-atletas-convocados-para-copa-pan-americana-2023--">Estreia na quarta-feira</a>
-              </div>
-              <p class="text-white mb-4 ms-2">Seleção Masculina sub-19 disputa Campeonato Mundial na Argentina.</p>
-          </div>
-        </div>
-        <div class="noticia-item col-lg-3 me-5">
           <div class="position-relative">
               <img src="../static/img/noticia6.jpg" class="img-fluid">
           </div>
@@ -231,12 +198,12 @@
               <div class="d-flex justify-content-between mb-3">
               </div>
               <div class="d-flex mb-3">
-                  <a id="text-link" class="ms-2" href="https://cbv.com.br/noticia/29528/selecao-feminina-vence-tailandia-no-encerramento-da-fase-classificatoria-da-liga-das-nacoes-2023">Só mais um passo.</a>
+                  <a id="text-link" class="" href="https://cbv.com.br/noticia/29528/selecao-feminina-vence-tailandia-no-encerramento-da-fase-classificatoria-da-liga-das-nacoes-2023">Só mais um passo.</a>
               </div>
-              <p class="text-white mb-4 ms-2">Vôlei: Brasil vence Itália e vai à final do Mundial feminino.</p>
+              <p class="text-white mb-4">Vôlei: Brasil vence Itália e vai à final do Mundial feminino.</p>
           </div>
         </div>
-      </div>   
+      </div> 
       <!--Fim Noticias Itens-->
 
       <!--Início Footer-->
