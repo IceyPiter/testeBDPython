@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="../static/css/css-login.css">
 </head>
 
-<body>
+<body style="background-image: url(../static/img/bola2.jpg); background-size: cover; background-repeat: no-repeat;">
     <!-- CONTAINER DO LOGIN -->
         {% if caso == 1 %}
         <div class="container d-flex align-items-center justify-content-center" style="height: 100vh;">
@@ -42,16 +42,59 @@
               <a href="{% url 'home' %}">Home</a>  
           </div>
           <div class="col-xs-12 col-sm-12 col-md-4">
-              <form id="login-box" class="p-3 text-light" action="{% url 'realizar_login' %}" method="post">
+              <form id="login-box" class="p-3 text-light" action="{% url 'conferirCode' %}" method="post">
                   {% csrf_token %}
                   <h1 id="texts" class="pb-3 text-center">Insira o Código do Email</h1>
                   <div class="mb-3">
                       <label for="" class="form-label">Código</label>
-                      <input type="text" name="code" class="form-control" placeholder="Código Aqui" required>
+                      <input type="password" name="code" class="form-control" placeholder="Código Aqui" required>
                   </div>
                   <span class="h6 fw-light" style="color:rgb(255, 133, 18);">{{erro}}</span>
                   <div class="text-center my-3">
                       <button type="submit" class="btn">Entrar</button>
+                  </div>
+              </form>
+          </div>
+        </div>
+        <!-- Fim Modal 2 -->
+        {% endif %}
+        {% if caso == 3 %}
+        <div class="container d-flex align-items-center justify-content-center" style="height: 100vh;">
+          <div class="home h4 fixed-top mt-3 ms-4 text-white fw-light">
+              <a href="{% url 'home' %}">Home</a>  
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-4">
+              <form id="login-box" class="p-3 text-light" action="{% url 'definirSenha' %}" method="post">
+                  {% csrf_token %}
+                  <h1 id="texts" class="pb-3 text-center">Nova Senha</h1>
+                  <div class="mb-3">
+                      <label for="" class="form-label">Nova Senha</label>
+                      <input type="password" name="code" class="form-control" placeholder="Senha Aqui" required>
+                  </div>
+                  <div class="mb-3">
+                    <label for="" class="form-label">Confirmar Senha</label>
+                    <input type="password" name="code2" class="form-control" placeholder="Senha Aqui" required>
+                </div>
+                  <span class="h6 fw-light" style="color:rgb(255, 133, 18);">{{erro}}</span>
+                  <div class="text-center my-3">
+                      <button type="submit" class="btn">Entrar</button>
+                  </div>
+              </form>
+          </div>
+        </div>
+        <!-- Fim Modal 2 -->
+        {% endif %}
+        {% if caso == 4 %}
+        <div class="container d-flex align-items-center justify-content-center" style="height: 100vh;">
+          <div class="home h4 fixed-top mt-3 ms-4 text-white fw-light">
+              <a href="{% url 'homeLogado' %}">Home</a>  
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-4">
+              <form id="login-box" class="p-3 text-light" action="{% url 'homeLogado' %}" method="post">
+                  {% csrf_token %}
+                  <h1 id="texts" class="pb-3 text-center">Senha Redefinida</h1>
+                  <div class="text-center my-3">
+                      <button type="submit" class="btn">Home</button>
                   </div>
               </form>
           </div>

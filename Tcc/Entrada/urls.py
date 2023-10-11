@@ -6,6 +6,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name="home"),
     path('openUser/', views.openUser, name="openUser"),
+    path('homeLogado/', views.homeLogado, name="homeLogado"),
     path('openHistory/', views.openHistory, name="openHistory"),
     path('openFundamentos/', views.openFundamentos, name="openFundamentos"),
     path('openMsg/', views.openMsg, name="openMsg"),
@@ -15,5 +16,8 @@ urlpatterns = [
     path('realizar_login/', views.realizar_login, name="realizar_login"),
     path('deslogar/<str:nomeusuario>', views.deslogar, name="deslogar"),
     path('recuperarSenha/', views.recuperarSenha, name="recuperarSenha"),
+    path('conferirCode/', views.conferirCode, name="conferirCode"),   
+    path('esqueceuSenha/', views.esqueceuSenha, name="esqueceuSenha"),
     path('openConf/', views.openConf, name="openConf"),
+    path('definirSenha/', views.definirSenha, name="definirSenha"),
 ]

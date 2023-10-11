@@ -8,6 +8,12 @@ from random import randint
 def home(request):
     return render(request,'Voleibol.html',{"caso1": "Login", "caso2": "Registrar-se"})
 
+def homeLogado(request):
+    parametro = User.objects.get(nome = nomeuser)
+    parametro.login = True
+    parametro.save()
+    return render(request,'Voleibol.html',{"caso1": nomeuser, "caso2": "Configurações"})
+
 def openUser(request):
     return render(request,'cadastrar_user.html')
 
@@ -18,13 +24,21 @@ def openHistory(request):
     return render(request,'Historia.html')
 
 def openFundamentos(request):
-    return render(request,'Fundamentos.html')
+    usuario = request.POST.get("Login")
+    if usuario == "Login":
+        case2 = "Registrar-se"
+    else:
+        case2 = "Configurações"
+    return render(request,'Fundamentos.html', {"caso1": usuario,"caso2": case2})
 
 def openLogin(request):
     return render(request,'realizar_login.html')
 
-def openConf(request):
+def esqueceuSenha(request):
     return render(request,'configuracao.html', {"caso": 1})
+
+def openConf(request):
+    return render(request,'configuracao.html', {"caso": 5})
 
 def cadastrar_user(request):
     nomeForm = request.POST.get("user")
@@ -86,18 +100,19 @@ def deslogar(request, nomeusuario):
         return redirect('/')
     return render(request,'realizar_login.html')
 
-global code
-
 def gerarCode(): 
+    global code
     code = ""
     for i in range(0,5):
-        code += str(randint(0,9))
+        code += str(randint(0,9)) 
     return code
+    
 
 def recuperarSenha(request):
-    print("A")
+    global nomeuser
     userForm = request.POST.get("nome")
     parametro = User.objects.get(nome = userForm)
+    nomeuser = userForm
 
     corpo_email = f"""
     Seu código de recuperação é {gerarCode()}
@@ -106,7 +121,7 @@ def recuperarSenha(request):
     print(parametro.email)
     remetente = "voleiboltccif@gmail.com"
     msg = email.message.Message()
-    msg['Subject'] = "Isso é um teste"
+    msg['Subject'] = "Redeinição de Senha"
     msg['From'] = remetente#'remetente'
     msg['To'] = parametro.email
     password = 'bbfz gjgr cqsy xuuq'#'senha'#nao e a senha do seu email
@@ -120,4 +135,26 @@ def recuperarSenha(request):
     s.login(msg['From'], password)
     s.sendmail(msg['From'], [msg['To']], msg.as_string().encode('utf-8'))
 
-    return redirect('configuracao/',{"caso":2})
+    return render(request,'configuracao.html',{"caso":2})
+
+def conferirCode(request):
+    codeForm = request.POST.get("code")
+        
+    if codeForm == code:
+       return render(request,'configuracao.html',{"caso":3})
+    return render(request,'configuracao.html',{"caso":2,"erro":"Código Incorreto"})
+
+def definirSenha(request):
+    codeForm = request.POST.get("code")
+    confirmacaoForm = request.POST.get("code2")
+    
+    parametro = User.objects.get(nome = nomeuser)
+    
+    if codeForm == confirmacaoForm:
+        parametro.password = codeForm
+        parametro.save()
+        return render(request,'configuracao.html',{"caso":4})
+    return render(request,'configuracao.html',{"caso":3,"erro":"Senhas Diferentes"})
+        
+        
+

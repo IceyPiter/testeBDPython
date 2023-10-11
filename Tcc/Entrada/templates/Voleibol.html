@@ -26,8 +26,8 @@
           <li><a id="Registrar" class="ms-2" href="{% url 'openUser' %}">Registrar-se</a></li>
           {% endif %}
           {% if caso1 != "Login" %}
-          <li><a id="Login" class="ms-2" href="{% url 'openLogin' %}">{{ caso1 }}</a></li>
-          <li><a id="Registrar" class="ms-2" href="{% url 'openUser' %}">{{ caso2 }}</a></li>
+          <li><a id="Login" class="ms-2" href="">{{ caso1 }}</a></li>
+          <li><a id="Registrar" class="ms-2" href="{% url 'openConf' %}">{{ caso2 }}</a></li>
           <li><a id="LogOut" class="ms-2" href="{% url 'deslogar' caso1 %}">LogOut</a></li>
           {% endif %}
         </ul>

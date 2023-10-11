@@ -8,16 +8,29 @@
     <script src="https://unpkg.com/feather-icons"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="icon" href="../assets/Volleyball-logo.png">
-    <link rel="stylesheet" href="../static/css/stylePrincipalPage.css"></link>
     <link rel="stylesheet" href="../static/css/css-Fundamentos.css"></link>
   </head>
 <body>
   <div class="barra container-fluid d-flex">  
     <img class="img-navbar d-inline-block" src="../static/img/Volleyball-logo.png" width="30" height="30" alt="">
     <h3 class="text-white fw-light ms-3">WebVolei</h3>
-    <div class="login container-fluid">
-      <a class="text-white fw-light me-3" href="#">Login</a>
-      <a class="text-white fw-light" href="#">Registrar-se</a>
+    <div class="login container-fluid" style="margin-right: 60px;">
+      <li class="nav-item dropdown d-flex align-items-center">
+        <a class="nav-item nav-link dropdown-toggle text-white" id="texto-teste"  href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          -- Usuário --
+        </a>
+        <ul id="elementsUser" class="dropdown-menu text-white fw-light" style="background-color: #e98b10d7;" aria-labelledby="navbarDropdown">
+          {% if caso1 == "Login" %}
+          <li><a id="Login" class="ms-2" href="{% url 'openLogin' %}">Login</a></li>
+          <li><a id="Registrar" class="ms-2" href="{% url 'openUser' %}">Registrar-se</a></li>
+          {% endif %}
+          {% if caso1 != "Login" %}
+          <li><a id="Login" class="ms-2" href="">{{ caso1 }}</a></li>
+          <li><a id="Registrar" class="ms-2" href="{% url 'openConf' %}">{{ caso2 }}</a></li>
+          <li><a id="LogOut" class="ms-2" href="{% url 'deslogar' caso1 %}">LogOut</a></li>
+          {% endif %}
+        </ul>
+      </li>        
     </div>
   </div>
   
@@ -29,10 +42,10 @@
           <div class="collapse navbar-collapse" id="navbarScroll">
             <ul class="linha container-fluid navbar-nav me-auto my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 300px;">
               <li class="nav-item"> 
-                <a class="nav-item nav-link" id="texto-teste" href="../Voleibol.html">Home</a>
+                <a class="nav-item nav-link text-white" id="texto-teste" href="../Voleibol.html">Home</a>
               </li>
               <li class="nav-item dropdown">
-                <a class="nav-item nav-link dropdown-toggle me-1" id="texto-teste"  href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="nav-item nav-link dropdown-toggle me-1 text-white" id="texto-teste"  href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Fundamentos
                 </a>
                 <ul class="dropdown-menu" style="background-color: #192a50d7;" aria-labelledby="navbarDropdown">
@@ -43,23 +56,17 @@
                   <li><a class="dropdown-item text-white" href="Fundamentos.html#Bloqueio">Bloqueio</a></li>
                 </ul>
               </li>
+              <li class="nav-item">
+                <a class="nav-item nav-link text-white" href="#" id="texto-teste">Regras</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item nav-link text-white" href="#" style="width: 120px;" id="texto-teste">Brasil no Vôlei</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item nav-link text-white" href="#" id="texto-teste">Referências</a>
+              </li>
               <li class="nav-item ">
-                <a class="nav-item nav-link" id="texto-teste" href="#">História</a>
-              </li>
-              <li class="nav-item ">
-                <a class="nav-item nav-link" id="texto-teste" href="#">Funções</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-item nav-link" id="texto-teste" href="#">Formações</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-item nav-link" href="#" style="width: 120px;" id="texto-teste">Brasil no Vôlei</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-item nav-link" href="#" id="texto-teste">Regras</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-item nav-link" href="#" id="texto-teste">Referências</a>
+                <a class="nav-item nav-link text-white" id="texto-teste" style="width: 180px;" href="#">Chat da Comunidade</a>
               </li>
               <div id="form" class="container-xxl justify-content-end">
              </div>
@@ -67,17 +74,30 @@
           </div>
         </div>
       </nav>
-      <div class="justify-content-center text-center mt-5 mb-5">
-        <h2 id="Recepcao" class="iniRecepcao fw-light"><i data-feather="arrow-left"></i> Recepção <i data-feather="arrow-right"></i></h2>
+      <div class="justify-content-center text-center mt-5 mb-1 p-1">
+        <h2 id="Recepcao" class="fw-light" style="color:rgb(255, 166, 0);"><i data-feather="arrow-left" ></i> Recepção <i data-feather="arrow-right"></i></h2>
+      </div>
+      <div class="container">
+        <div class="text">
+          <div>
+            <p class="p text1-recep text-white fw-bold">O QUE É:</p>
+            <p class="p text1-recep text-white fw-light">A recepção do saque no Voleibol é o primeiro toque na bola dado pela equipe que está recebendo o saque. A manchete é o fundamento mais utilizado para a recepção de saques e para a defesa de bolas cortadas, pois o contato da bola se faz no antebraço, região que suporta melhor os fortes impactos provocados por ela.</p>
+          </div>
+        </div>
+        <div class="image">
+          <img class="img mb-1" src="../static/img/assetsPages/image1-teste.png" alt="Imagem">
+        </div>
       </div>
       <div class="container">
         <div class="image">
-            <img class="img" src="../static/img/assetsPages/imagem3.png" alt="Imagem">
+            <img class="img" src="../static/img/assetsPages/imagem3-teste.png" alt="Imagem">
+            <img class="img" src="../static/img/assetsPages/imagem2-teste.png" alt="Imagem">
         </div>
-        <div class="text">
+        <div class="text mt-2">
           <div>
             <p class="p text1-recep text-white fw-bold">COMO EXECUTAR:</p>
             <p class="p text1-recep text-white fw-light mt-2"><i data-feather="circle"></i> O tronco deve estar posicionado de frente para a bola, pernas semi-flexionadas, como a posição de expectativa e os braços estendidos e unidos à frente do corpo;<br><i data-feather="circle"></i> Posição das mãos: Os dedos unidos de uma mão devem estar sobrepostos aos da outra, de forma que os polegares estendidos possam se tocar paralelamente.<br><i data-feather="circle"></i> No movimento de ataque à bola, as pernas se estendem e os braços permanecem sem movimento. O impacto da bola se dá no antebraço.</p>
+            <p class="p text1-recep text-white fw-Light">Veja o passo a passo nas imagens abaixo e assista o vídeo <span><a style="color:rgb(255, 166, 0);" href="https://www.youtube.com/watch?v=mi4m0tUhM0w">“Manchete | Vôlei - YouTube”</a></span> para aprender como realizar esse fundamento.</p>
           </div>
         </div>
       </div>
@@ -103,171 +123,7 @@
           </div>
         </div>
       </div>
-      <div class="container">
-        <div class="text">
-          <div>
-            <p class="p text1-recep text-white fw-bold">COMO EXECUTAR:</p>
-            <p class="p text1-recep text-white fw-light mt-2"><i data-feather="circle"></i> O tronco deve estar posicionado de frente para a bola, pernas semi- flexionadas, como a posição de expectativa e os braços estendidos e unidos à frente do corpo;<br><i data-feather="circle"></i> Posição das mãos: Os dedos unidos de uma mão devem estar sobrepostos aos da outra, de forma que os polegares estendidos possam se tocar paralelamente.<br><i data-feather="circle"></i> No movimento de ataque à bola, as pernas se estendem e os braços permanecem sem movimento. O impacto da bola se dá no antebraço.</p>
-          </div>
-        </div>
-        <div class="image">
-            <img class="img" src="../static/img/assetsPages/imagem3.png" alt="Imagem">
-        </div>
-      </div>
-      <div class="container">
-        <div class="image">
-            <img class="img" src="../static/img/assetsPages/imagem3.png" alt="Imagem">
-        </div>
-        <div class="text">
-          <div>
-            <p class="p text1-recep text-white fw-bold">COMO EXECUTAR:</p>
-            <p class="p text1-recep text-white fw-light mt-2"><i data-feather="circle"></i> O tronco deve estar posicionado de frente para a bola, pernas semi-flexionadas, como a posição de expectativa e os braços estendidos e unidos à frente do corpo;<br><i data-feather="circle"></i> Posição das mãos: Os dedos unidos de uma mão devem estar sobrepostos aos da outra, de forma que os polegares estendidos possam se tocar paralelamente.<br><i data-feather="circle"></i> No movimento de ataque à bola, as pernas se estendem e os braços permanecem sem movimento. O impacto da bola se dá no antebraço.</p>
-          </div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="text">
-          <div>
-            <p class="p text1-recep text-white fw-bold">COMO EXECUTAR:</p>
-            <p class="p text1-recep text-white fw-light mt-2"><i data-feather="circle"></i> O tronco deve estar posicionado de frente para a bola, pernas semi- flexionadas, como a posição de expectativa e os braços estendidos e unidos à frente do corpo;<br><i data-feather="circle"></i> Posição das mãos: Os dedos unidos de uma mão devem estar sobrepostos aos da outra, de forma que os polegares estendidos possam se tocar paralelamente.<br><i data-feather="circle"></i> No movimento de ataque à bola, as pernas se estendem e os braços permanecem sem movimento. O impacto da bola se dá no antebraço.</p>
-          </div>
-        </div>
-        <div class="image">
-            <img class="img" src="../static/img/assetsPages/imagem3.png" alt="Imagem">
-        </div>
-      </div>
-      <div class="container">
-        <div class="image">
-            <img class="img" src="../static/img/assetsPages/imagem3.png" alt="Imagem">
-        </div>
-        <div class="text">
-          <div>
-            <p class="p text1-recep text-white fw-bold">COMO EXECUTAR:</p>
-            <p class="p text1-recep text-white fw-light mt-2"><i data-feather="circle"></i> O tronco deve estar posicionado de frente para a bola, pernas semi-flexionadas, como a posição de expectativa e os braços estendidos e unidos à frente do corpo;<br><i data-feather="circle"></i> Posição das mãos: Os dedos unidos de uma mão devem estar sobrepostos aos da outra, de forma que os polegares estendidos possam se tocar paralelamente.<br><i data-feather="circle"></i> No movimento de ataque à bola, as pernas se estendem e os braços permanecem sem movimento. O impacto da bola se dá no antebraço.</p>
-          </div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="text">
-          <div>
-            <p class="p text1-recep text-white fw-bold">COMO EXECUTAR:</p>
-            <p class="p text1-recep text-white fw-light mt-2"><i data-feather="circle"></i> O tronco deve estar posicionado de frente para a bola, pernas semi- flexionadas, como a posição de expectativa e os braços estendidos e unidos à frente do corpo;<br><i data-feather="circle"></i> Posição das mãos: Os dedos unidos de uma mão devem estar sobrepostos aos da outra, de forma que os polegares estendidos possam se tocar paralelamente.<br><i data-feather="circle"></i> No movimento de ataque à bola, as pernas se estendem e os braços permanecem sem movimento. O impacto da bola se dá no antebraço.</p>
-          </div>
-        </div>
-        <div class="image">
-            <img class="img" src="../static/img/assetsPages/imagem3.png" alt="Imagem">
-        </div>
-      </div>
-      <div class="container">
-        <div class="image">
-            <img class="img" src="../static/img/assetsPages/imagem3.png" alt="Imagem">
-        </div>
-        <div class="text">
-          <div>
-            <p class="p text1-recep text-white fw-bold">COMO EXECUTAR:</p>
-            <p class="p text1-recep text-white fw-light mt-2"><i data-feather="circle"></i> O tronco deve estar posicionado de frente para a bola, pernas semi-flexionadas, como a posição de expectativa e os braços estendidos e unidos à frente do corpo;<br><i data-feather="circle"></i> Posição das mãos: Os dedos unidos de uma mão devem estar sobrepostos aos da outra, de forma que os polegares estendidos possam se tocar paralelamente.<br><i data-feather="circle"></i> No movimento de ataque à bola, as pernas se estendem e os braços permanecem sem movimento. O impacto da bola se dá no antebraço.</p>
-          </div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="text">
-          <div>
-            <p class="p text1-recep text-white fw-bold">COMO EXECUTAR:</p>
-            <p class="p text1-recep text-white fw-light mt-2"><i data-feather="circle"></i> O tronco deve estar posicionado de frente para a bola, pernas semi- flexionadas, como a posição de expectativa e os braços estendidos e unidos à frente do corpo;<br><i data-feather="circle"></i> Posição das mãos: Os dedos unidos de uma mão devem estar sobrepostos aos da outra, de forma que os polegares estendidos possam se tocar paralelamente.<br><i data-feather="circle"></i> No movimento de ataque à bola, as pernas se estendem e os braços permanecem sem movimento. O impacto da bola se dá no antebraço.</p>
-          </div>
-        </div>
-        <div class="image">
-            <img class="img" src="../static/img/assetsPages/imagem3.png" alt="Imagem">
-        </div>
-      </div>
-      <div class="container">
-        <div class="image">
-            <img class="img" src="../static/img/assetsPages/imagem3.png" alt="Imagem">
-        </div>
-        <div class="text">
-          <div>
-            <p class="p text1-recep text-white fw-bold">COMO EXECUTAR:</p>
-            <p class="p text1-recep text-white fw-light mt-2"><i data-feather="circle"></i> O tronco deve estar posicionado de frente para a bola, pernas semi-flexionadas, como a posição de expectativa e os braços estendidos e unidos à frente do corpo;<br><i data-feather="circle"></i> Posição das mãos: Os dedos unidos de uma mão devem estar sobrepostos aos da outra, de forma que os polegares estendidos possam se tocar paralelamente.<br><i data-feather="circle"></i> No movimento de ataque à bola, as pernas se estendem e os braços permanecem sem movimento. O impacto da bola se dá no antebraço.</p>
-          </div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="text">
-          <div>
-            <p class="p text1-recep text-white fw-bold">COMO EXECUTAR:</p>
-            <p class="p text1-recep text-white fw-light mt-2"><i data-feather="circle"></i> O tronco deve estar posicionado de frente para a bola, pernas semi- flexionadas, como a posição de expectativa e os braços estendidos e unidos à frente do corpo;<br><i data-feather="circle"></i> Posição das mãos: Os dedos unidos de uma mão devem estar sobrepostos aos da outra, de forma que os polegares estendidos possam se tocar paralelamente.<br><i data-feather="circle"></i> No movimento de ataque à bola, as pernas se estendem e os braços permanecem sem movimento. O impacto da bola se dá no antebraço.</p>
-          </div>
-        </div>
-        <div class="image">
-            <img class="img" src="../static/img/assetsPages/imagem3.png" alt="Imagem">
-        </div>
-      </div>
-      <div class="container">
-        <div class="image">
-            <img class="img" src="../static/img/assetsPages/imagem3.png" alt="Imagem">
-        </div>
-        <div class="text">
-          <div>
-            <p class="p text1-recep text-white fw-bold">COMO EXECUTAR:</p>
-            <p class="p text1-recep text-white fw-light mt-2"><i data-feather="circle"></i> O tronco deve estar posicionado de frente para a bola, pernas semi-flexionadas, como a posição de expectativa e os braços estendidos e unidos à frente do corpo;<br><i data-feather="circle"></i> Posição das mãos: Os dedos unidos de uma mão devem estar sobrepostos aos da outra, de forma que os polegares estendidos possam se tocar paralelamente.<br><i data-feather="circle"></i> No movimento de ataque à bola, as pernas se estendem e os braços permanecem sem movimento. O impacto da bola se dá no antebraço.</p>
-          </div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="text">
-          <div>
-            <p class="p text1-recep text-white fw-bold">COMO EXECUTAR:</p>
-            <p class="p text1-recep text-white fw-light mt-2"><i data-feather="circle"></i> O tronco deve estar posicionado de frente para a bola, pernas semi- flexionadas, como a posição de expectativa e os braços estendidos e unidos à frente do corpo;<br><i data-feather="circle"></i> Posição das mãos: Os dedos unidos de uma mão devem estar sobrepostos aos da outra, de forma que os polegares estendidos possam se tocar paralelamente.<br><i data-feather="circle"></i> No movimento de ataque à bola, as pernas se estendem e os braços permanecem sem movimento. O impacto da bola se dá no antebraço.</p>
-          </div>
-        </div>
-        <div class="image">
-            <img class="img" src="../static/img/assetsPages/imagem3.png" alt="Imagem">
-        </div>
-      </div>
-      <div class="container">
-        <div class="image">
-            <img class="img" src="../static/img/assetsPages/imagem3.png" alt="Imagem">
-        </div>
-        <div class="text">
-          <div>
-            <p class="p text1-recep text-white fw-bold">COMO EXECUTAR:</p>
-            <p class="p text1-recep text-white fw-light mt-2"><i data-feather="circle"></i> O tronco deve estar posicionado de frente para a bola, pernas semi-flexionadas, como a posição de expectativa e os braços estendidos e unidos à frente do corpo;<br><i data-feather="circle"></i> Posição das mãos: Os dedos unidos de uma mão devem estar sobrepostos aos da outra, de forma que os polegares estendidos possam se tocar paralelamente.<br><i data-feather="circle"></i> No movimento de ataque à bola, as pernas se estendem e os braços permanecem sem movimento. O impacto da bola se dá no antebraço.</p>
-          </div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="text">
-          <div>
-            <p class="p text1-recep text-white fw-bold">COMO EXECUTAR:</p>
-            <p class="p text1-recep text-white fw-light mt-2"><i data-feather="circle"></i> O tronco deve estar posicionado de frente para a bola, pernas semi- flexionadas, como a posição de expectativa e os braços estendidos e unidos à frente do corpo;<br><i data-feather="circle"></i> Posição das mãos: Os dedos unidos de uma mão devem estar sobrepostos aos da outra, de forma que os polegares estendidos possam se tocar paralelamente.<br><i data-feather="circle"></i> No movimento de ataque à bola, as pernas se estendem e os braços permanecem sem movimento. O impacto da bola se dá no antebraço.</p>
-          </div>
-        </div>
-        <div class="image">
-            <img class="img" src="../static/img/assetsPages/imagem3.png" alt="Imagem">
-        </div>
-      </div>
-      <div class="container">
-        <div class="image">
-            <img class="img" src="../static/img/assetsPages/imagem3.png" alt="Imagem">
-        </div>
-        <div class="text">
-          <div>
-            <p class="p text1-recep text-white fw-bold">COMO EXECUTAR:</p>
-            <p class="p text1-recep text-white fw-light mt-2"><i data-feather="circle"></i> O tronco deve estar posicionado de frente para a bola, pernas semi-flexionadas, como a posição de expectativa e os braços estendidos e unidos à frente do corpo;<br><i data-feather="circle"></i> Posição das mãos: Os dedos unidos de uma mão devem estar sobrepostos aos da outra, de forma que os polegares estendidos possam se tocar paralelamente.<br><i data-feather="circle"></i> No movimento de ataque à bola, as pernas se estendem e os braços permanecem sem movimento. O impacto da bola se dá no antebraço.</p>
-          </div>
-        </div>
-      </div>
-      <div id="Bloqueio" class="container">
-        <div class="text">
-          <div>
-            <p class="p text1-recep text-white fw-bold">COMO EXECUTAR:</p>
-            <p class="p text1-recep text-white fw-light mt-2"><i data-feather="circle"></i> O tronco deve estar posicionado de frente para a bola, pernas semi- flexionadas, como a posição de expectativa e os braços estendidos e unidos à frente do corpo;<br><i data-feather="circle"></i> Posição das mãos: Os dedos unidos de uma mão devem estar sobrepostos aos da outra, de forma que os polegares estendidos possam se tocar paralelamente.<br><i data-feather="circle"></i> No movimento de ataque à bola, as pernas se estendem e os braços permanecem sem movimento. O impacto da bola se dá no antebraço.</p>
-          </div>
-        </div>
-        <div class="image">
-            <img class="img" src="../static/img/assetsPages/imagem3.png" alt="Imagem">
-        </div>
-      </div>
+      
 
       <footer class="container-fluid">
         <div class="text-white fw-light">
