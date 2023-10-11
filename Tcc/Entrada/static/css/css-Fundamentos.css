@@ -35,7 +35,7 @@ a{
 .linha{
     border-top: 1px solid white;
     border-bottom: 1px solid white;
-    background-color: rgb(224, 88, 9);
+    background-color: #ff5733;
     padding: 0px 0px 0px 0px;
 }
 
@@ -88,11 +88,42 @@ img {
     flex: 1.5;
     font-size: 20px;
     padding: 20px; /* Espaçamento ao redor do texto */
-    background-color: #041820; /* Cor de fundo da área de texto */
+    background-color: #272829; /* Cor de fundo da área de texto */
     color: white;
 }
 
 .p {
     margin: 0;
     text-align: justify;
+}
+
+#SaquePCIMA, #SaquePBAIXO{
+    margin-left: 300px;
+    color: #FFE569;
+    font-size: 27px;
+}
+
+#Recepcao, #Saque, #Levantamento, #Bloqueio, #Ataque{
+    color:rgb(255, 166, 0);
+    font-size: 40px;
+}
+
+#Saque, #Levantamento, #Bloqueio, #Ataque{
+    margin-top: 60px;
+}
+
+#spanOrange{
+    color:rgb(255, 166, 0);
+}
+
+.video-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.video-container img {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
 }

@@ -40,6 +40,9 @@ def esqueceuSenha(request):
 def openConf(request):
     return render(request,'configuracao.html', {"caso": 5})
 
+def openRegras(request):
+    return render(request,'Regras.html', {"caso": 1})
+
 def cadastrar_user(request):
     nomeForm = request.POST.get("user")
     senhaForm = request.POST.get("password")

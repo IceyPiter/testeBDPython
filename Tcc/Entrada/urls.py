@@ -8,6 +8,7 @@ urlpatterns = [
     path('openUser/', views.openUser, name="openUser"),
     path('homeLogado/', views.homeLogado, name="homeLogado"),
     path('openHistory/', views.openHistory, name="openHistory"),
+    path('openRegras/', views.openRegras, name="openRegras"),
     path('openFundamentos/', views.openFundamentos, name="openFundamentos"),
     path('openMsg/', views.openMsg, name="openMsg"),
     path('openLogin/', views.openLogin, name="openLogin"),
