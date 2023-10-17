@@ -42,18 +42,18 @@
       <div class="collapse navbar-collapse" id="navbarScroll">
         <ul class="linha container-fluid navbar-nav me-auto my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 300px;">
           <li class="nav-item"> 
-            <a class="nav-item nav-link text-white" href="../Voleibol.html">Home</a>
+            <a class="nav-item nav-link text-white" id="texto-teste" href="{% url 'home' %}">Home</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-item nav-link dropdown-toggle me-1 text-white"  href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Fundamentos
             </a>
             <ul class="dropdown-menu" style="background-color: #192a50d7;" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item text-white" href="Fundamentos.html#Saque">Saque</a></li>
-              <li><a class="dropdown-item text-white" href="Fundamentos.html#Recepcao">Recepção</a></li>
-              <li><a class="dropdown-item text-white" href="Fundamentos.html#Levantamento">Levantamento</a></li>
-              <li><a class="dropdown-item text-white" href="Fundamentos.html#Ataque">Ataque</a></li>
-              <li><a class="dropdown-item text-white" href="Fundamentos.html#Bloqueio">Bloqueio</a></li>
+              <li><a class="dropdown-item text-white" href="{% url 'openFundamentos' 1 %}">Recepção</a></li>
+              <li><a class="dropdown-item text-white" href="{% url 'openFundamentos' 2 %}">Saque</a></li>
+              <li><a class="dropdown-item text-white" href="{% url 'openFundamentos' 3 %}">Levantamento</a></li>
+              <li><a class="dropdown-item text-white" href="{% url 'openFundamentos' 4 %}">Bloqueio</a></li>
+              <li><a class="dropdown-item text-white" href="{% url 'openFundamentos' 5 %}">Ataque</a></li>
             </ul>
           </li>
           <li class="nav-item">

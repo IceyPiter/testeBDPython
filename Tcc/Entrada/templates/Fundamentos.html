@@ -44,20 +44,20 @@
           <li class="nav-item"> 
             <a class="nav-item nav-link text-white" id="texto-teste" href="{% url 'home' %}">Home</a>
           </li>
-          <li class="nav-item"> 
-            <a class="nav-item nav-link text-white" id="texto-teste" href="{% url 'openHistory' %}">História</a>
-          </li>
           <li class="nav-item dropdown">
             <a class="nav-item text-white nav-link dropdown-toggle me-1" id="texto-teste"  href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Fundamentos
             </a>
             <ul class="dropdown-menu" style="background-color: #192a50d7;" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item text-white" href="{% url 'openFundamentos' %}#Recepcao">Recepção</a></li>
-              <li><a class="dropdown-item text-white" href="{% url 'openFundamentos' %}#Saque">Saque</a></li>
-              <li><a class="dropdown-item text-white" href="{% url 'openFundamentos' %}#Levantamento">Levantamento</a></li>
-              <li><a class="dropdown-item text-white" href="{% url 'openFundamentos' %}#Bloqueio">Bloqueio</a></li>
-              <li><a class="dropdown-item text-white" href="{% url 'openFundamentos' %}#Ataque">Ataque</a></li>
+              <li><a class="dropdown-item text-white" href="{% url 'openFundamentos' 1 %}">Recepção</a></li>
+              <li><a class="dropdown-item text-white" href="{% url 'openFundamentos' 2 %}">Saque</a></li>
+              <li><a class="dropdown-item text-white" href="{% url 'openFundamentos' 3 %}">Levantamento</a></li>
+              <li><a class="dropdown-item text-white" href="{% url 'openFundamentos' 4 %}">Bloqueio</a></li>
+              <li><a class="dropdown-item text-white" href="{% url 'openFundamentos' 5 %}">Ataque</a></li>
             </ul>
+          </li>
+          <li class="nav-item"> 
+            <a class="nav-item nav-link text-white" id="texto-teste" href="{% url 'openHistory' %}">História</a>
           </li>
           <li class="nav-item">
             <a class="nav-item nav-link text-white" href="{% url 'openRegras' %}">Regras</a>
@@ -79,6 +79,7 @@
   </nav>
   <!-- Fim Header -->
 
+  {% if caso == "1" %}
   <!-- Início Recepção -->  
   <div class="justify-content-center text-center mt-4 mb-0 p-0">
     <h2 id="Recepcao" class="fw-light"><i data-feather="arrow-left" ></i> Recepção <i data-feather="arrow-right"></i></h2>
@@ -86,7 +87,7 @@
   <div class="container">
     <div class="text">
       <div>
-        <p class="p text1-recep text-white fw-bold">Descrição:</p>
+        <p class="p text1-recep text-white fw-bold">DESCRIÇÃO:</p>
         <p class="p text1-recep text-white fw-light">A recepção do saque no Voleibol é o primeiro toque na bola dado pela equipe que está recebendo o saque. A manchete é o fundamento mais utilizado para a recepção de saques e para a defesa de bolas cortadas, pois o contato da bola se faz no antebraço, região que suporta melhor os fortes impactos provocados por ela.</p>
       </div>
     </div>
@@ -126,7 +127,10 @@
     </div>
   </div>
   <!-- Fim Recepção -->
+  {% endif %}
 
+
+  {% if caso == "2" %}
   <!-- Início Saque -->
   <div class="justify-content-center text-center mb-0 p-0">
     <h2 id="Saque" class="fw-light mt-5"><i data-feather="arrow-left" ></i> Saque <i data-feather="arrow-right"></i></h2>
@@ -137,7 +141,7 @@
     </div>
     <div class="text"> 
       <div>
-        <p class="p text1-recep text-white fw-bold">Descrição:</p>
+        <p class="p text1-recep text-white fw-bold">DESCRIÇÃO:</p>
         <p class="p text1-recep text-white fw-light">O saque, também chamado de serviço, é o fundamento que dá inicio ao Rally. Ele será realizado pelo jogador da posição 1. O jogador sacador deverá ficar atrás da linha de fundo de sua quadra, região chamada de zona de saque (compreende a área de 9m de largura atrás da linha de fundo de cada lado da quadra). Existem três tipos de saque no voleibol: Saque por baixo, saque por cima e saque viagem. Confira abaixo a maneira correta de se executar os saques por cima e por baixo.</p>
       </div>
     </div>
@@ -150,7 +154,7 @@
   <div class="container" style="height: 20vh;">
      <div class="text">
       <div>
-        <p class="p text1-recep text-white fw-bold">Descrição:</p>
+        <p class="p text1-recep text-white fw-bold">DESCRIÇÃO:</p>
         <p class="p text1-recep text-white fw-light"> Em virtude da velocidade que o braço pode atingir, no saque por cima o impacto na bola é bem mais potente que o saque por baixo. Dessa forma ele é mais rápido e eficiente além de possuir uma trajetória bem definida, por isso é o tipo de saque mais utilizado nos jogos de voleibol.</p>
       </div>
     </div>
@@ -188,13 +192,13 @@
   <!-- Fim Saque Por Cima -->
 
   <!-- Início Saque Por Baixo -->
-  <div class="justify-content-start text-start mb-0 p-0">
+  <div class="justify-conmi4m0tUhM0wtent-start text-start mb-0 p-0">
     <h2 id="SaquePBAIXO" class="fw-light mt-5"><i data-feather="arrow-right" ></i> Saque por Baixo:</h2>
   </div>
   <div class="container" style="height: 20vh;">
      <div class="text">
       <div>
-        <p class="p text1-recep text-white fw-bold">Descrição:</p>
+        <p class="p text1-recep text-white fw-bold">DESCRIÇÃO:</p>
         <p class="p text1-recep text-white fw-light"> A denominação “saque por baixo” diz respeito à forma de como a bola é golpeada, de baixo para cima. Esse tipo de saque é indicado para iniciantes no voleibol. A trajetória da bola durante o saque é alta e forma uma “parábola”, fazendo com que o saque seja mais lento e não ofereça dificuldades para a recepção adversária.</p>
       </div>
     </div>
@@ -231,7 +235,9 @@
   </div>
   <!-- Fim Saque Por Baixo -->
   <!-- Fim Saque -->
-
+  {% endif %}
+  
+  {% if caso == "3" %}
   <!-- Início Levantamento -->  
   <div class="justify-content-center text-center mb-0 p-0">
     <h2 id="Levantamento" class="fw-light"><i data-feather="arrow-left" ></i> Levantamento <i data-feather="arrow-right"></i></h2>
@@ -239,7 +245,7 @@
   <div class="container">
     <div class="text">
       <div>
-        <p class="p text1-recep text-white fw-bold">Descrição:</p>
+        <p class="p text1-recep text-white fw-bold">DESCRIÇÃO:</p>
         <p class="p text1-recep text-white fw-light">O levantamento é, normalmente, o segundo toque dos três toques permitidos para cada equipe. A técnica mais utilizada para realizar um levantamento é o toque, também chamado de voleio.  O objetivo deste fundamento é levantar a bola próximo da rede para que um companheiro da equipe realize um ataque. O levantamento normalmente é realizado pelo jogador que ocupa a posição 3.</p>
       </div>
     </div>
@@ -278,7 +284,9 @@
     </div>
   </div>
   <!-- Fim Levantamento -->
+  {% endif %}
 
+  {% if caso == "4" %}
   <!-- Início Bloqueio -->  
   <div class="justify-content-center text-center mb-0 p-0">
     <h2 id="Bloqueio" class="fw-light"><i data-feather="arrow-left" ></i> Bloqueio <i data-feather="arrow-right"></i></h2>
@@ -289,7 +297,7 @@
     </div>
     <div class="text">
       <div>
-        <p class="p text1-recep text-white fw-bold">Descrição:</p>
+        <p class="p text1-recep text-white fw-bold">DESCRIÇÃO:</p>
         <p class="p text1-recep text-white fw-light">O bloqueio é um fundamento que visa interceptar junto à rede a bola cortada pelo adversário. O toque da bola no jogador que realizou o bloqueio não é contabilizado nos três toques que são permitidos por equipe. Existem três possibilidades de bloqueio: o simples ( apenas 1 jogador realiza o bloqueio) duplo ( 2 jogadores irão realizar o bloqueio) triplo ( 3 jogadores realizam o bloqueio.</p>
       </div>
     </div>
@@ -325,7 +333,9 @@
     </div>
   </div>
   <!-- Fim Bloqueio -->
+  {% endif %}
 
+  {% if caso == "5" %}
   <!-- Início Ataque -->  
   <div class="justify-content-center text-center mb-0 p-0">
     <h2 id="Ataque" class="fw-light"><i data-feather="arrow-left" ></i> Ataque <i data-feather="arrow-right"></i></h2>
@@ -336,7 +346,7 @@
     </div>
     <div class="text">
       <div>
-        <p class="p text1-recep text-white fw-bold">Descrição:</p>
+        <p class="p text1-recep text-white fw-bold">DESCRIÇÃO:</p>
         <p class="p text1-recep text-white fw-light">O ataque é o ultimo toque (dos três toques permitidos) da equipe na bola antes de enviá-la para a quadra adversária. Normalmente realizado através de uma cortada, fundamento do voleibol que finaliza a maioria das ações ofensivas e visa enviar, através de um forte golpe dado durante um salto à bola de encontro ao solo da quadra adversária. Requer muita coordenação visio-motora pois toda ação é condicionada pelas características da trajetória do levantamento.
         </p>
       </div>
@@ -373,6 +383,7 @@
     </div>
   </div>
   <!-- Fim Ataque -->
+  {% endif %}
 
   {% comment %} <div class="container">
     <div class="text">
