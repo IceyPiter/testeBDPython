@@ -23,13 +23,13 @@ def openMsg(request):
 def openHistory(request):
     return render(request,'Historia.html')
 
-def openFundamentos(request):
+def openFundamentos(request, caso):
     usuario = request.POST.get("Login")
     if usuario == "Login":
         case2 = "Registrar-se"
     else:
         case2 = "Configurações"
-    return render(request,'Fundamentos.html', {"caso1": usuario,"caso2": case2})
+    return render(request,'Fundamentos.html', {"caso1": usuario,"caso2": case2, "caso":caso})
 
 def openLogin(request):
     return render(request,'realizar_login.html')
