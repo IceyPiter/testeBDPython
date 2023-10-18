@@ -29,7 +29,7 @@ def openFundamentos(request, caso):
         case2 = "Registrar-se"
     else:
         case2 = "Configurações"
-    return render(request,'Fundamentos.html', {"caso1": usuario,"caso2": case2, "caso":caso})
+    return render(request,'Fundamentos.html', {"caso1": usuario,"caso2": case2, "caso": caso})
 
 def openLogin(request):
     return render(request,'realizar_login.html')
