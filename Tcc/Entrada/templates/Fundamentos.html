@@ -44,6 +44,9 @@
           <li class="nav-item"> 
             <a class="nav-item nav-link text-white" id="texto-teste" href="{% url 'home' %}">Home</a>
           </li>
+          <li class="nav-item"> 
+            <a class="nav-item nav-link text-white" id="texto-teste" href="{% url 'openHistory' %}">História</a>
+          </li>
           <li class="nav-item dropdown">
             <a class="nav-item text-white nav-link dropdown-toggle me-1" id="texto-teste"  href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Fundamentos
@@ -55,9 +58,6 @@
               <li><a class="dropdown-item text-white" href="{% url 'openFundamentos' 4 %}">Bloqueio</a></li>
               <li><a class="dropdown-item text-white" href="{% url 'openFundamentos' 5 %}">Ataque</a></li>
             </ul>
-          </li>
-          <li class="nav-item"> 
-            <a class="nav-item nav-link text-white" id="texto-teste" href="{% url 'openHistory' %}">História</a>
           </li>
           <li class="nav-item">
             <a class="nav-item nav-link text-white" href="{% url 'openRegras' %}">Regras</a>
@@ -109,7 +109,7 @@
   </div>
   <div class="container-xxl py-5 mt-5 px-0">
     <div class="row g-0">
-      <div class="col-md-6 bg-dark d-flex align-items-center">
+      <div class="video-text col-md-6 bg-dark d-flex align-items-center">
           <div class="p-5">
               <h6 id="spanOrange" class="section-title text-start text-uppercase mb-3">Video Apoio</h6>
               <h1 class="text-white mb-4">Manchete | Vôlei</h1>
@@ -128,7 +128,6 @@
   </div>
   <!-- Fim Recepção -->
   {% endif %}
-
 
   {% if caso == "2" %}
   <!-- Início Saque -->
@@ -172,7 +171,7 @@
   </div>
   <div class="container-xxl py-5 mt-5 px-0">
     <div class="row g-0">
-      <div class="col-md-6 bg-dark d-flex align-items-center">
+      <div class="video-text col-md-6 bg-dark d-flex align-items-center">
           <div class="p-5">
               <h6 id="spanOrange" class="section-title text-start text-uppercase mb-3">Video Apoio</h6>
               <h1 class="text-white mb-4">Saque por cima | Vôlei</h1>
@@ -192,7 +191,7 @@
   <!-- Fim Saque Por Cima -->
 
   <!-- Início Saque Por Baixo -->
-  <div class="justify-conmi4m0tUhM0wtent-start text-start mb-0 p-0">
+  <div class="justify-content-start text-start mb-0 p-0">
     <h2 id="SaquePBAIXO" class="fw-light mt-5"><i data-feather="arrow-right" ></i> Saque por Baixo:</h2>
   </div>
   <div class="container" style="height: 20vh;">
@@ -216,7 +215,7 @@
   </div>
   <div class="container-xxl py-5 mt-5 px-0">
     <div class="row g-0">
-      <div class="col-md-6 bg-dark d-flex align-items-center">
+      <div class="video-text col-md-6 bg-dark d-flex align-items-center">
           <div class="p-5">
               <h6 id="spanOrange" class="section-title text-start text-uppercase mb-3">Video Apoio</h6>
               <h1 class="text-white mb-4">Saque por baixo | Vôlei</h1>
@@ -236,7 +235,7 @@
   <!-- Fim Saque Por Baixo -->
   <!-- Fim Saque -->
   {% endif %}
-  
+
   {% if caso == "3" %}
   <!-- Início Levantamento -->  
   <div class="justify-content-center text-center mb-0 p-0">
@@ -266,7 +265,7 @@
   </div>
   <div class="container-xxl py-5 mt-5 px-0">
     <div class="row g-0">
-      <div class="col-md-6 bg-dark d-flex align-items-center">
+      <div class="video-text col-md-6 bg-dark d-flex align-items-center">
           <div class="p-5">
               <h6 id="spanOrange" class="section-title text-start text-uppercase mb-3">Video Apoio</h6>
               <h1 class="text-white mb-4">Levantamento | Vôlei</h1>
@@ -313,10 +312,10 @@
       <img class="img" src="../static/img/assetsPages/imagem2-teste.png" alt="Imagem">
     </div>
   </div>
-  <div class="container-xxl py-5 mt-5 px-0">
+  <div  class="container-xxl py-5 mt-5 px-0">
     <div class="row g-0">
-      <div class="col-md-6 bg-dark d-flex align-items-center">
-          <div class="p-5">
+      <div class="video-text col-md-6 bg-dark d-flex align-items-center">
+          <div  class="p-5">
               <h6 id="spanOrange" class="section-title text-start text-uppercase mb-3">Video Apoio</h6>
               <h1 class="text-white mb-4">Bloqueio | Vôlei</h1>
               <p class="text-white mb-4">Canal: SIKANA Brasil / Português</p>
