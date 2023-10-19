@@ -3,6 +3,9 @@ import email.message
 from django.shortcuts import render, redirect
 from .models import *
 from random import randint
+from django.contrib.auth.models import User
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def home(request):
@@ -31,6 +34,10 @@ def openFundamentos(request, caso):
         case2 = "Configurações"
     return render(request,'Fundamentos.html', {"caso1": usuario,"caso2": case2, "caso": caso})
 
+@login_required
+def openChat(request):
+    return render(request,'chat.html')
+
 def openLogin(request):
     return render(request,'realizar_login.html')
 
@@ -50,15 +57,12 @@ def cadastrar_user(request):
 
     users = User.objects.all()
     for i in users:
-        if i.nome == nomeForm or i.email == nomeForm:
+        if i.username == nomeForm or i.email == nomeForm:
             erro = "!!  Este usuário já existe  !!"
             return render(request, 'cadastrar_user.html', {"erro": erro})
-        
-    usuario = User(nome=nomeForm,
-                password=senhaForm,
-                email=emailForm)
+    user = User.objects.create_user(nomeForm, emailForm, senhaForm)
 
-    usuario.save()
+    user.save()
 
     return render(request, 'Voleibol.html', {"caso1":nomeForm, "caso2": "Configurações"})
 
@@ -79,28 +83,22 @@ def envia_msg(request):
 def realizar_login(request):
     nomeForm = request.POST.get("name")
     senhaForm = request.POST.get("password")
-    print(nomeForm)
-    print(senhaForm)
 
-    users = User.objects.all()
-
-    for i in users:
-        if i.nome == nomeForm or i.email == nomeForm:
-            if i.password == senhaForm:
-                i.login = True
-                i.save()
-                return render(request, 'Voleibol.html', {"caso1": i.nome, "caso2": "Configurações"})
-        else:
-            pass
-
-    return render(request, 'realizar_login.html', {"erro": "Usuário ou Senha Incorretos!!","nome": nomeForm}) 
+    user = authenticate(request, username=nomeForm, password=senhaForm)
+    if user:
+        login(request,user)
+        user.save()
+        print(request)
+    return render(request, 'Voleibol.html', {"caso1": user, "caso2": "Configurações"})
 
 def deslogar(request, nomeusuario):
-    parametro = User.objects.get(nome = nomeusuario)
-    if parametro.login == True:
-        parametro.login = False
-        parametro.save()
-        return redirect('/')
+    logout(request)
+    # parametro = User.objects.get(nome = nomeusuario)
+    # if parametro.login == True:
+    #     parametro.login = False
+    #     parametro.save()
+        
+    #     return redirect('/')
     return render(request,'realizar_login.html')
 
 def gerarCode(): 
