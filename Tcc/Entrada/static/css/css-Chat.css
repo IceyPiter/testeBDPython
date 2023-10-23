@@ -35,7 +35,7 @@ a{
 .linha{
     border-top: 1px solid white;
     border-bottom: 1px solid white;
-    background-color: #ff5733;
+    background-color: #0687ff;
     padding: 0px 0px 0px 0px;
 }
 
@@ -72,8 +72,8 @@ a{
     border: 1px solid #ccc;
     margin: 10px;
     padding: 10px;
-    width: 60%;
-    background-color: #f2f2f2;
+    width: 70%;
+    background-color: #4cd3fc;
 }
 .user-name {
     font-weight: bold;
@@ -81,9 +81,22 @@ a{
 }
 .message-content {
     font-size: 14px;
+    color: white;
 }
 .reply-link {
     font-size: 10px;
     color: blue;
-    text-decoration: underline;
+    text-decoration: none;
+}
+
+form{
+    align-items: center;
+}
+
+#sla{
+    align-items: center;
+}
+
+#mensagem{
+    width: 90%;
 }

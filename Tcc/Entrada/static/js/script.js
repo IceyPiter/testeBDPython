@@ -27,3 +27,17 @@ const years = document.querySelectorAll(".year");
           }
       });
   });
+
+
+document.getElementById("textosMensage").addEventListener("click", function (event) {
+    // Pega o ID do elemento que foi clicado
+    var elementoClicadoID = event.target.name;
+
+    // Verifique se o elemento clicado tem um ID (evita erros se não tiver)
+    if (elementoClicadoID) {       
+        // Exibe o ID e o conteúdo em outro espaço (por exemplo, em um div)
+        document.getElementById("responde").innerHTML = "Respondendo: "
+        document.getElementById("nome").innerHTML = " " + elementoClicadoID
+    }
+    console.log("erro")
+});

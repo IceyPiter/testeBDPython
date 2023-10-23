@@ -33,7 +33,8 @@ def openFundamentos(request, caso):
 
 @login_required(login_url="openLogin")
 def openChat(request):
-    return render(request,'chat.html',{"caso1": True})
+    mensages = Mensage.objects.all()
+    return render(request,'chat.html',{"caso1": True, "mensagens": mensages})
 
 def openLogin(request):
     return render(request,'realizar_login.html')
@@ -68,20 +69,17 @@ def cadastrar_user(request):
 
 def envia_msg(request):
     mensagemForm = request.POST.get("msg")
-    idUser = request.POST.get("ID")
+    idUser = request.user
 
     mensagem = Mensage(mensage=mensagemForm,
                         id_user=idUser)
 
     mensagem.save()
 
-    mensagens = Mensage.objects.all()
-    mensages = {"msg": mensagens}
-
-    return render(request, 'listUser.html', mensages)
+    return redirect("openChat")
 
 def realizar_login(request):
-    
+    global nomeUser
     nomeForm = request.POST.get("name")
     senhaForm = request.POST.get("password")
 
@@ -89,6 +87,7 @@ def realizar_login(request):
     if user:
         login(request,user)
         user.save()
+        nomeUser = nomeForm
         return render(request, 'Voleibol.html', {"caso1": True, "caso2": "Configurações"})
     return render(request, 'realizar_login.html', {"erro": "Usuário ou senha incorretos"})
 

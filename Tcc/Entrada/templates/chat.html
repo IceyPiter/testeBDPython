@@ -72,15 +72,18 @@
       </div>
     </nav>
     <!--Fim Barra de Navegação-->
-  
-    <div class="chat-message">
-        <div class="user-name">Nome do Usuário</div>
-        <div class="message-content">Conteúdo da mensagem em letra menor.</div>
-        <a class="reply-link" href="#">Responder</a>
+    {% for i in mensagens %}
+    <div class="chat-message container-fluid">
+        <div class="user-name" id="user{{i.id_user}}">{{ i.id_user }}</div>
+        <div class="message-content">{{ i.mensage }}</div>
+        <button id="textosMensage" name="{{i.id_user}}" class="Reply-link">Click me</button>
     </div>
-    <form>
-        <input type="text" id="mensagem" placeholder="Digite sua mensagem">
-        <button type="submit">Enviar</button>
+    {% endfor %}
+    <form class="container-fluid text-center mb-1 mt-3" action="{% url 'mandar_msg' %}" method="post">
+      {% csrf_token %}
+      <h4 id="responde" name="responde" class="user-name text-white text-center"></h4><h4 id="nome" name="nome" class="user-name text-white text-center"></h4>
+      <input class="" name="msg" type="text" id="mensagem" placeholder="Digite sua mensagem">
+      <button class="" type="submit">Enviar</button>
     </form>
     <!-- Fim Timeline -->
     <footer class="container-fluid">
