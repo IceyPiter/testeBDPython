@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Voleibol</title>
     <script src="https://unpkg.com/feather-icons"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -21,14 +21,14 @@
           -- Usuário --
         </a>
         <ul id="elementsUser" class="dropdown-menu text-white fw-light" style="background-color: #e98b10d7;" aria-labelledby="navbarDropdown">
-          {% if caso1 == "Login" %}
+          {% if caso1 == False %}
           <li><a id="Login" class="ms-2" href="{% url 'openLogin' %}">Login</a></li>
           <li><a id="Registrar" class="ms-2" href="{% url 'openUser' %}">Registrar-se</a></li>
           {% endif %}
-          {% if caso1 != "Login" %}
-          <li><a id="Login" class="ms-2" href="">{{ caso1 }}</a></li>
-          <li><a id="Registrar" class="ms-2" href="{% url 'openConf' %}">{{ caso2 }}</a></li>
-          <li><a id="LogOut" class="ms-2" href="{% url 'deslogar' caso1 %}">LogOut</a></li>
+          {% if caso1 == True %}
+          <li><a id="Login" class="ms-2" href="">{{ user.get_username }}</a></li>
+          <li><a id="Registrar" class="ms-2" href="{% url 'openConf' %}">Configurações</a></li>
+          <li><a id="LogOut" class="ms-2" href="{% url 'deslogar' %}">LogOut</a></li>
           {% endif %}
         </ul>
       </li>        
@@ -67,7 +67,7 @@
                 <a class="nav-item nav-link" href="#" id="texto-teste">Referências</a>
               </li>
               <li class="nav-item ">
-                <a class="nav-item nav-link" id="texto-teste" style="width: 180px;" href="#">Chat da Comunidade</a>
+                <a class="nav-item nav-link" id="texto-teste" style="width: 180px;" href="{% url 'openChat' %}">Chat da Comunidade</a>
               </li>
               <div id="form" class="container-xxl justify-content-end">
              </div>
@@ -163,16 +163,16 @@
         </div>
       </div>  
       <!--Fim Carousel Noticias-->
-      <div class="noticia-1 d-flex justify-content-between mt-3 mb-3">
+      <div class="noticia-1 d-flex justify-content-between mt-3">
         <div class="noticia-item col-lg-3">
           <div class="position-relative">
               <img src="../static/img/noticia3.jpg" class="img-fluid">
           </div>
-          <div class="p-2 mt-2">
+          <div class="p-2 mt-2 container-xxl">
               <div class="d-flex justify-content-between mb-3">
               </div>
               <div class="d-flex mb-3">
-                  <a id="text-link" class="" href="https://cbv.com.br/noticia/29528/selecao-feminina-vence-tailandia-no-encerramento-da-fase-classificatoria-da-liga-das-nacoes-2023">Partiu Fase Final</a>
+                  <a id="text-link" class=""  href="https://cbv.com.br/noticia/29528/selecao-feminina-vence-tailandia-no-encerramento-da-fase-classificatoria-da-liga-das-nacoes-2023">Partiu Fase Final</a>
               </div>
               <p class="text-white mb-4">Seleção feminina vence Tailândia no encerramento da fase classificarória da Liga das Nações 2023.</p>
           </div>
@@ -181,10 +181,10 @@
           <div class="position-relative">
               <img src="../static/img/noticia4.jpg" class="img-fluid">
           </div>
-          <div class="p-2 mt-2">
+          <div class="p-2 mt-2 container-xxl">
               <div class="d-flex justify-content-between mb-3">
               </div>
-              <div class="d-flex mb-3">
+              <div class="d-flex mb-3"> 
                   <a id="text-link" class="" href="https://cbv.com.br/noticia/29565/circuito-mundial-de-volei-de-praia:-duda-e-taina-querem-medalhas-na-etapa-elite-do-canada-como-presentes-de-aniversario">De Volta</a>
               </div>
               <p class="text-white mb-4">Com Leal no  grupo, seleção masculina encara a Polônia pelas quartas de final da Liga das Naçoẽs.</p>
@@ -194,13 +194,13 @@
           <div class="position-relative">
               <img src="../static/img/noticia6.jpg" class="img-fluid">
           </div>
-          <div class="p-2 mt-2">
+          <div class="p-2 mt-2 container-xxl">
               <div class="d-flex justify-content-between mb-3">
               </div>
               <div class="d-flex mb-3">
                   <a id="text-link" class="" href="https://cbv.com.br/noticia/29528/selecao-feminina-vence-tailandia-no-encerramento-da-fase-classificatoria-da-liga-das-nacoes-2023">Só mais um passo.</a>
               </div>
-              <p class="text-white mb-4">Vôlei: Brasil vence Itália e vai à final do Mundial feminino.</p>
+              <p class="text-white mb-3">Vôlei: Brasil vence Itália e vai à final do Mundial feminino.</p>
           </div>
         </div>
       </div> 

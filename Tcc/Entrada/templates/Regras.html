@@ -21,14 +21,14 @@
                   -- Usuário --
                 </a>
                 <ul id="elementsUser" class="dropdown-menu text-white fw-light" style="background-color: #e98b10d7;" aria-labelledby="navbarDropdown">
-                  {% if caso1 == "Login" %}
+                  {% if caso1 == False %}
                   <li><a id="Login" class="ms-2" href="{% url 'openLogin' %}">Login</a></li>
                   <li><a id="Registrar" class="ms-2" href="{% url 'openUser' %}">Registrar-se</a></li>
                   {% endif %}
-                  {% if caso1 != "Login" %}
-                  <li><a id="Login" class="ms-2" href="">{{ caso1 }}</a></li>
-                  <li><a id="Registrar" class="ms-2" href="{% url 'openConf' %}">{{ caso2 }}</a></li>
-                  {% comment %} <li><a id="LogOut" class="ms-2" href="{% url 'deslogar' caso1 %}">LogOut</a></li> {% endcomment %}
+                  {% if caso1 == True %}
+                  <li><a id="Login" class="ms-2" href="">{{ user.get_username }}</a></li>
+                  <li><a id="Registrar" class="ms-2" href="{% url 'openConf' %}">Configurações</a></li>
+                  <li><a id="LogOut" class="ms-2" href="{% url 'deslogar' %}">LogOut</a></li>
                   {% endif %}
                 </ul>
             </li>        

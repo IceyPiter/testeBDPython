@@ -42,7 +42,7 @@
               <a href="{% url 'home' %}">Home</a>  
           </div>
           <div class="col-xs-12 col-sm-12 col-md-4">
-              <form id="login-box" class="p-3 text-light" action="{% url 'conferirCode' %}" method="post">
+              <form id="login-box" class="p-3 text-light" action="{% url 'conferirCode' nome %}" method="post">
                   {% csrf_token %}
                   <h1 id="texts" class="pb-3 text-center">Insira o Código do Email</h1>
                   <div class="mb-3">
@@ -64,7 +64,7 @@
               <a href="{% url 'home' %}">Home</a>  
           </div>
           <div class="col-xs-12 col-sm-12 col-md-4">
-              <form id="login-box" class="p-3 text-light" action="{% url 'definirSenha' %}" method="post">
+              <form id="login-box" class="p-3 text-light" action="{% url 'definirSenha' nome %}" method="post">
                   {% csrf_token %}
                   <h1 id="texts" class="pb-3 text-center">Nova Senha</h1>
                   <div class="mb-3">
