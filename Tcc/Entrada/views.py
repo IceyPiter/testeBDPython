@@ -70,13 +70,14 @@ def cadastrar_user(request):
 def envia_msg(request):
     mensagemForm = request.POST.get("msg")
     response = request.POST.get("nome")
+    idMensagem = request.POST.get("idresponse")
     idUser = f"{request.user}"
 
     numberMensages = Mensage.objects.all()
     idM = len(numberMensages) + 1
     if response != "":
         mensagem = Mensage(id=idM,mensage=mensagemForm,
-                        id_user=idUser, key=Mensage.objects.get(id=1))
+                        id_user=idUser, key=Mensage.objects.get(id=idMensagem))
     else:
         mensagem = Mensage(id=idM,mensage=mensagemForm,
                         id_user=idUser)
