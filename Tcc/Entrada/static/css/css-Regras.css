@@ -35,7 +35,7 @@ a{
 .linha{
     border-top: 1px solid white;
     border-bottom: 1px solid white;
-    background-color: #ff5733;
+    background-color: #c6cfca;
     padding: 0px 0px 0px 0px;
 }
 
@@ -65,7 +65,7 @@ a{
 }
 
 #spanOrange{
-    color:rgb(255, 166, 0);
+    color:#c6cfca;
 }
 
 .container {
@@ -112,7 +112,7 @@ img {
     border: 1px solid #ccc;
     padding: 10px;
     margin-bottom: 10px;
-    background-color: #ff5733;
+    background-color: #d1e0d7;
 }
 
 .rule-content {
