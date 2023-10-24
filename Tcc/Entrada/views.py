@@ -64,23 +64,23 @@ def cadastrar_user(request):
     user = User.objects.create_user(nomeForm, emailForm, senhaForm)
 
     user.save()
-
-    return render(request, 'Voleibol.html', {"caso1":nomeForm, "caso2": "Configurações"})
+    login(request,user)
+    return render(request, 'Voleibol.html', {"caso1": True})
 
 def envia_msg(request):
     mensagemForm = request.POST.get("msg")
-    response = request.POST.get("nome")
     idMensagem = request.POST.get("idresponse")
     idUser = f"{request.user}"
-
+    
     numberMensages = Mensage.objects.all()
     idM = len(numberMensages) + 1
-    if response != "":
-        mensagem = Mensage(id=idM,mensage=mensagemForm,
-                        id_user=idUser, key=Mensage.objects.get(id=idMensagem))
-    else:
+    if idMensagem == "":
         mensagem = Mensage(id=idM,mensage=mensagemForm,
                         id_user=idUser)
+    else:
+        mensagem = Mensage(id=idM,mensage=mensagemForm,
+                        id_user=idUser, key=Mensage.objects.get(id=idMensagem))
+        
 
     mensagem.save()
 
@@ -117,17 +117,21 @@ def recuperarSenha(request):
         user = User.objects.get(username=userForm)
     except:
         user = False   
+    
+    if "@" in userForm:
+        usuario = User.objects.get(email = userForm)
+    else:
+        usuario = User.objects.get(username = userForm)
 
     if user:
         corpo_email = f"""
         Seu código de recuperação é {gerarCode()}
         """
-    
         remetente = "voleiboltccif@gmail.com"
         msg = email.message.Message()
         msg['Subject'] = "Redeinição de Senha"
         msg['From'] = remetente#'remetente'
-        msg['To'] = request.user.email
+        msg['To'] = usuario.email
         password = 'bbfz gjgr cqsy xuuq'#'senha'#nao e a senha do seu email
     
         msg.add_header('Content-Type', 'text/html')

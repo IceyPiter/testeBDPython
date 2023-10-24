@@ -87,10 +87,10 @@
         {% if caso == 4 %}
         <div class="container d-flex align-items-center justify-content-center" style="height: 100vh;">
           <div class="home h4 fixed-top mt-3 ms-4 text-white fw-light">
-              <a href="{% url 'homeLogado' %}">Home</a>  
+              <a href="{% url 'home' %}">Home</a>  
           </div>
           <div class="col-xs-12 col-sm-12 col-md-4">
-              <form id="login-box" class="p-3 text-light" action="{% url 'homeLogado' %}" method="post">
+              <form id="login-box" class="p-3 text-light" action="{% url 'home' %}" method="post">
                   {% csrf_token %}
                   <h1 id="texts" class="pb-3 text-center">Senha Redefinida</h1>
                   <div class="text-center my-3">
