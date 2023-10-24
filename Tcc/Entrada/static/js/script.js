@@ -39,5 +39,4 @@ document.getElementById("textosMensage").addEventListener("click", function (eve
         document.getElementById("responde").innerHTML = "Respondendo: "
         document.getElementById("nome").innerHTML = " " + elementoClicadoID
     }
-    console.log("erro")
 });

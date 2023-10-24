@@ -69,9 +69,16 @@ def cadastrar_user(request):
 
 def envia_msg(request):
     mensagemForm = request.POST.get("msg")
-    idUser = request.user
+    response = request.POST.get("nome")
+    idUser = f"{request.user}"
 
-    mensagem = Mensage(mensage=mensagemForm,
+    numberMensages = Mensage.objects.all()
+    idM = len(numberMensages) + 1
+    if response != "":
+        mensagem = Mensage(id=idM,mensage=mensagemForm,
+                        id_user=idUser, key=Mensage.objects.get(id=1))
+    else:
+        mensagem = Mensage(id=idM,mensage=mensagemForm,
                         id_user=idUser)
 
     mensagem.save()
