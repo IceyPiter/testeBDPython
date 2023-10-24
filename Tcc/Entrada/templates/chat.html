@@ -22,7 +22,7 @@
           <a class="nav-item nav-link dropdown-toggle text-white"  href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             -- Usuário --
           </a>
-          <ul id="elementsUser" class="dropdown-menu text-white fw-light" style="background-color: #e98b10d7;" aria-labelledby="navbarDropdown">
+          <ul id="elementsUser" class="dropdown-menu text-white fw-light" style="background-color: #4cd3fc;" aria-labelledby="navbarDropdown">
             <li><a id="Login" class="ms-2" href="">{{ user.get_username }}</a></li>
             <li><a id="Registrar" class="ms-2" href="{% url 'openConf' %}">Configurações</a></li>
             <li><a id="LogOut" class="ms-2" href="{% url 'deslogar' %}">LogOut</a></li>
@@ -77,7 +77,7 @@
     <div class="chat-message container-fluid">
         <div class="user-name" id="user{{i.id_user}}">{{ i.id_user }}</div>
         <div class="message-content">{{ i.mensage }}</div>
-        <button type="button" name="{{i.id_user}}" class="btn btn-info">Responder</button>
+        <button type="button" name="{{i.id_user}}" id="{{i.id}}" class="btn btn-info">Responder</button>
     </div>
     {% endfor %}
   </div>
@@ -85,6 +85,7 @@
       {% csrf_token %}
       <h4 id="responde" name="responde" class="user-name text-white text-center"></h4>
       <h4 id="nome" name="nome" class="user-name text-white text-center"></h4>
+      <input type="hidden" name="idresponse" id="idresponse" value="">
       <input class="" name="msg" type="text" id="mensagem" placeholder="Digite sua mensagem">
       <button class="" type="submit">Enviar</button>
     </form>
