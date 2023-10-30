@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <meta name="description" content="Site sobre Voleibol - TCC, Informática">
     <link rel="icon" href="../static/img/Volleyball-logo.png">
-    <title>Login</title>
+    <title>Chat</title>
     <link rel="stylesheet" href="../static/css/css-Chat.css">
 </head>
 
@@ -74,11 +74,23 @@
     <!--Fim Barra de Navegação-->
     <div id="textosMensage">
     {% for i in mensagens %}
-    <div class="chat-message container-fluid">
+    {% if i.key != i %}
+    <div class="chat-message container-fluid" style="width: 1000px; overflow-x: auto;">
         <div class="user-name" id="user{{i.id_user}}">{{ i.id_user }}</div>
         <div class="message-content">{{ i.mensage }}</div>
         <button type="button" name="{{i.id_user}}" id="{{i.id}}" class="btn btn-info">Responder</button>
     </div>
+    {% endif %}
+    {% for f in mensagens %}
+    {% if f.key == i %}
+    <div class="chat-message container-fluid" style="width: 1000px; overflow-x: auto;">
+      <div class="user-name" id="user{{i.id_user}}">{{ f.id_user }}</div>
+      <div class="message-content">{{ f.mensage }}</div>
+      <a type="button" href="#{{id.user}}" id="" class="btn btn-info">Resposta para {{ i.id_user }}</a>
+      <h6 class="mt-2" style="font-size: 11px;">{{ i.mensage }}...</h6>
+    </div>
+    {% endif %}
+    {% endfor %}
     {% endfor %}
   </div>
     <form class="container-fluid text-center mb-1 mt-3" action="{% url 'mandar_msg' %}" method="post">
