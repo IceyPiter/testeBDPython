@@ -75,6 +75,16 @@ a{
     width: 70%;
     background-color: #4cd3fc;
 }
+
+.chat-response {
+    border: 1px solid #ccc;
+    margin: 10px;
+    padding: 10px;
+    width: 70%;
+    margin-left: 50px;
+    background-color: #099fcc;
+}
+
 .user-name {
     font-weight: bold;
     font-size: 12px;
