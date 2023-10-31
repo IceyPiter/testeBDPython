@@ -42,7 +42,7 @@
       <div class="collapse navbar-collapse" id="navbarScroll">
         <ul class="linha container-fluid navbar-nav me-auto my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 300px;">
           <li class="nav-item"> 
-            <a class="nav-item nav-link text-white" href="../Voleibol.html">Home</a>
+            <a class="nav-item nav-link text-white" href="{% url 'home' %}">Home</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-item nav-link dropdown-toggle me-1 text-white"  href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -66,7 +66,7 @@
             <a class="nav-item nav-link text-white" href="#">Referências</a>
           </li>
           <li class="nav-item">
-              <a class="nav-item nav-link text-white" href="#" style="width: 180px;">Chat da Comunidade</a>
+              <a class="nav-item nav-link text-white" href="{% url 'openChat' %}" style="width: 180px;">Chat da Comunidade</a>
           </li>
           <div id="form" class="container-xxl justify-content-end">
          </div>

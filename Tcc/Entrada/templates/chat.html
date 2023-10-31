@@ -63,7 +63,7 @@
               <a class="nav-item nav-link text-white" href="#">Referências</a>
             </li>
             <li class="nav-item">
-                <a class="nav-item nav-link text-white" href="#" style="width: 180px;">Chat da Comunidade</a>
+                <a class="nav-item nav-link text-white" href="{% url 'openChat' %}" style="width: 180px;">Chat da Comunidade</a>
             </li>
             <div id="form" class="container-xxl justify-content-end">
            </div>
@@ -72,26 +72,28 @@
       </div>
     </nav>
     <!--Fim Barra de Navegação-->
-    <div id="textosMensage">
-    {% for i in mensagens %}
-    {% if i.key != i %}
-    <div class="chat-message container-fluid" style="width: 1000px; overflow-x: auto;">
-        <div class="user-name" id="user{{i.id_user}}">{{ i.id_user }}</div>
-        <div class="message-content">{{ i.mensage }}</div>
-        <button type="button" name="{{i.id_user}}" id="{{i.id}}" class="btn btn-info">Responder</button>
+    <div id="con">
+      <div id="textosMensage">
+      {% for i in mensagens %}
+      {% if i.key == None %}
+      <div class="chat-message container-fluid" id="{{ i.mensage }}1" style="width: 1000px; overflow-x: auto;">
+          <div class="user-name" id="user{{i.id_user}}">{{ i.id_user }}</div>
+          <div class="message-content">{{ i.mensage }}</div>
+          <button type="button" name="{{i.id_user}}" id="{{i.id}}" class="btn btn-info">Responder</button>
+      </div>
+      {% endif %}
+      {% for f in mensagens %}
+      {% if f.key == i %}
+      <div class="chat-response container-fluid" name="{{ i.mensage }}" id="respostas" style="width: 1000px; overflow-x: auto;">
+        <div class="user-name" id="user{{i.id_user}}">{{ f.id_user }}</div>
+        <div class="message-content">{{ f.mensage }}</div>
+        <a type="button" href="#{{i.mensage }}1" id="" class="btn btn-info">Resposta para {{ i.id_user }}</a>
+      </div>
+      {% endif %}
+      {% endfor %}
+      {% endfor %}
     </div>
-    {% endif %}
-    {% for f in mensagens %}
-    {% if f.key == i %}
-    <div class="chat-message container-fluid" style="width: 1000px; overflow-x: auto;">
-      <div class="user-name" id="user{{i.id_user}}">{{ f.id_user }}</div>
-      <div class="message-content">{{ f.mensage }}</div>
-      <a type="button" href="#{{id.user}}" id="" class="btn btn-info">Resposta para {{ i.id_user }}</a>
-      <h6 class="mt-2" style="font-size: 11px;">{{ i.mensage }}...</h6>
-    </div>
-    {% endif %}
-    {% endfor %}
-    {% endfor %}
+    
   </div>
     <form class="container-fluid text-center mb-1 mt-3" action="{% url 'mandar_msg' %}" method="post">
       {% csrf_token %}

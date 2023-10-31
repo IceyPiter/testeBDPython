@@ -33,6 +33,7 @@ def openFundamentos(request, caso):
 @login_required(login_url="openLogin")
 def openChat(request):
     mensages = Mensage.objects.all()
+
     return render(request,'chat.html',{"caso1": True, "mensagens": mensages})
 
 def openLogin(request):
