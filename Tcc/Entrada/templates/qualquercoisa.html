@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="Calvo" name="Calvo">
+    <div>
+
+
+    </div>
+    <script src="htpps://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="htpps://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <script>
+        $(document).on('input', '#Calvo', function () {
+
+            $.ajax({
+                type: 'POST',
+                url: "{% url 'getMensages' %}",
+                data: {
+                    name: $("#Calvo").val(),
+                    csrfmiddlewaretoken: $("input[name=csrfmiddlewaretoken]").val(),
+                },
+                success: function (data) {
+                    for (var num in response.Msgs){
+                        let id = response.Msgs[num].id
+                        let mensagem = response.Msgs[num].mensage
+                        let chave = response.Msgs[num].key
+                        let IdUser = response.Msgs[num].id_user
+                        if (chave == None){
+                            <div class="chat-message container-fluid" id="${mensagem}1" style="width: 1000px; overflow-x: auto;">
+                                <div class="user-name" id="user${id}">${id}</div>
+                                <div class="message-content">${mensagem}</div>
+                                <button type="button" name="${id}" id="${id}" class="btn btn-info">Responder</button>
+                            </div>
+                        }else{}
+                    }
+                
+                }//,
+                // error: function(response) {
+                //     alert("An Error Occured")
+                // }
+            });
+        });
+    </script>
+</body>
+
+</html>

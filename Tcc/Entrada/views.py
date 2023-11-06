@@ -1,5 +1,6 @@
 import smtplib
 import email.message
+from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render, redirect
 from .models import *
 from random import randint
@@ -50,6 +51,10 @@ def openRegras(request):
         return render(request,'Regras.html', {"caso1": True})
     else:
         return render(request,'Regras.html', {"caso1": False})
+
+def getMensages(request):
+    msg = Mensage.objects.all()
+    return JsonResponse({"Msgs":list(msg.values())})
 
 def cadastrar_user(request):
     nomeForm = request.POST.get("user")

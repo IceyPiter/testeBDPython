@@ -20,5 +20,6 @@ urlpatterns = [
     path('esqueceuSenha/', views.esqueceuSenha, name="esqueceuSenha"),
     path('openConf/', views.openConf, name="openConf"),
     path('openChat/', views.openChat, name="openChat"),
+    path('getMensages/', views.getMensages, name="getMensages"),
     path('definirSenha/<str:nomeusuario>', views.definirSenha, name="definirSenha"),
 ]
