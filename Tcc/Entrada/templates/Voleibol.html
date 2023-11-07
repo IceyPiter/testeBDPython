@@ -78,13 +78,18 @@
       <!--Fim Barra de Navegação-->
       
       <!--Início Descrição "WHO"-->
-      <div id="div-who" class="div-who" style=" background-image: url(../static/img/who.jpg); ">
-        <div class="text-who text-center">
-          <h1 class="text-who2 text-center text-white">Quem somos nós?</h1>
-          <span id="sla" class="text-center text-white">Somos <span class="fw-bold" id="span-who">Pedro Moraes Michalski</span> e <span class="fw-bold" id="span-who">Carla Christina De Oliveira P.</span>,</br>somos estudantes do 3º Ano de Informático do IFPR (Instituto Federal do Paraná - Campus Cascavel).</br>Começamos nosso 1° Ano do Ensino Médio em 2021 e estaremos finalizando nossa jornada em 2023, até então em andamento.</br>E este projeto é o nosso TCC (Projeto Final de Curso), o qual se entitula como</br><span class="fw-bold" id="span-who">“PROPOSTA DE DESENVOLVIMENTO DE UM SITE INFORMATIVO SOBRE VOLEIBOL”</span></span>
+      <div id="div-who" class="text-center" style=" background-image: url(../static/img/who.jpg);">
+        <section id="sec" class="py-5 text-center container-lg">
+          <div class="row py-lg-5">
+            <div class="col-lg-6 col-md-8 mx-auto">
+              <h1 class="text-white">Quem somos nós?</h1>
+              <span id="sla" class="text-white">Somos <span class="fw-bold" id="span-who">Pedro Moraes Michalski</span> e <span class="fw-bold" id="span-who">Carla Christina De Oliveira P.</span>,</br>somos estudantes do 3º Ano de Informática do IFPR (Instituto Federal do Paraná - Campus Cascavel).</br>Começamos nosso 1° Ano do Ensino Médio em 2021 e estaremos finalizando nossa jornada em 2023, até então em andamento.</br>E este projeto é o nosso TCC (Projeto Final de Curso), o qual se entitula como</br><span class="fw-bold" id="span-who">“PROPOSTA DE DESENVOLVIMENTO DE UM SITE INFORMATIVO SOBRE VOLEIBOL”</span></span>
+            </div>
+          </div>
+        </section>
         </div>
-      </div>
-      <!--Início Descrição "WHO"-->
+      </div>    
+      <!--Fim Descrição "WHO"-->
       <div class="justify">
         <h4 class="text-center fw-light mt-3" id="span-who"><i class="me-2" data-feather="corner-down-right"></i>Nosso Objetivo<i class="ms-2" data-feather="corner-down-left"></i></h4>
         <div class="text-center text-white">
@@ -99,17 +104,15 @@
           <p class="m-2 mb-4">já que temos como público principal jogadores iniciantes.</p>
         </div>
       </div>
-      <!--Fim Descrição "WHO"-->
-
-      
 
       <!--Início Noticas Itens-->
       <div class="justify-content-center mt-5 mb-5">
         <h2 id="span-who" class="iniNoticias text-center fw-light"><i class="me-2" data-feather="globe"></i>Notícias<i class="ms-2" data-feather="globe"></i></h2>
       </div>
       <!--Início Carousel Noticias-->
-      <div id="carousel-1" class="d-flex">
-        <div id="carouselExampleDark" class="carousel carousel-dark slide ms-3" style="width:1000px;" data-bs-ride="carousel">
+      <div id="carousel-1" class="d-flex w-100">
+
+        <div id="carouselExampleDark" class="carousel carousel-dark slide mb-4" style="width:1000px;" data-bs-ride="carousel">
           <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -117,21 +120,21 @@
           </div>
           <div class="carousel-inner container-fluid">
             <div class="carousel-item active" id="carousel-border" data-bs-interval="2000">
-              <img src="../static/img/noticia7.jpg" class="d-block w-100" data-bs-interval="500" height="623.36" alt="...">
+              <img src="../static/img/noticia7.jpg" class="d-block w-100" data-bs-interval="500" alt="...">
               <div class="carousel-caption d-none d-md-block text-white" id="carousel-text">
                 <h5>Defendendo o título</h5>
                 <p>Convocados para defender o Brasil na Copa Pan-Americana, Thierry e Lukas Bergmann disputam o CBI sub-21 pelo Sesi-SP.</p>
               </div>
             </div>
             <div class="carousel-item" id="carousel-border" data-bs-interval="2000">
-              <img src="../static/img/noticia8.jpg" class="d-block w-100" data-bs-interval="500" height="623.36" alt="...">
+              <img src="../static/img/noticia8.jpg" class="d-block w-100" data-bs-interval="500" alt="...">
               <div class="carousel-caption d-none d-md-block text-white" id="carousel-text">
                 <h5>As mais jovens</h5>
                 <p>Aos 14 anos, gêmeas baianas são as caçulas da Copa Regional Nordeste 2, que reúne 28 duplas em Recife.</p>
               </div>
             </div>
             <div class="carousel-item" id="carousel-border" data-bs-interval="2000">
-              <img src="../static/img/noticia9.jpg" class="d-block w-100" data-bs-interval="500" height="623.36" alt="...">
+              <img src="../static/img/noticia9.jpg" class="d-block w-100" data-bs-interval="500" alt="...">
               <div class="carousel-caption d-none d-md-block text-white" id="carousel-text">
                 <h5>Segundo consecutivo</h5>
                 <p>Sesi-SP conquista o bicampeonato do CBI masculino sub-21.</p>
@@ -147,65 +150,70 @@
             <span class="visually-hidden">Next</span>
           </button>
         </div>
-        <div class="container-xl py-4 w-50 m-4">
-          <div class="textos-principalPage text-white text-lg-start">
-            <div>
-              <h4 class="text-start mt-0">Vôlei é o esporte que mais desperta algum interesse entre brasileiros conectados</h4>
-              <span class="fw-light">Segundo dados da onda mais recente do Sponsorlink, maior pesquisa especializada em esportes do mundo do IBOPE Repucom, 87% dos brasileiros conectados com 18 anos ou mais se declaram interessados (muito interessados, interessados ou pouco interessados) por Vôlei, o que representa 96 milhões de indivíduos. Em 2013, quando iniciamos a pesquisa, o número de brasileiros conectados que se declaram fãs de vôlei era de 45 milhões, ou seja, o volume de internautas brasileiros interessados pelo esporte dobrou na última década, um crescimento de 113%</span>
-              <span class="fw-light">A pesquisa também revela que o Vôlei é um dos esportes mais praticados do País, atingindo 19% dos internautas brasileiros. Índice muito próximo a Corrida de Rua (21%), Andar de Bicicleta (22%) e Jogar Futebol (22%), que lideram a lista das atividades esportivas mais praticadas</span>
-            </div>
-            <div>
-              <h4 class="text-start mt-5">Federação Internacional de Vôlei lança projeto para impulsionar o crescimento global do vôlei</h4>
-              <span class="fw-light">O voleibol brasileiro ampliou o império de conquistas pelo mundo em 2010. A seleção masculina conquistou o tricampeonato mundial, na Itália. Com esta conquista, o Brasil tornou-se o maior vencedor da história da competição, ultrapassando a Itália, que acumulava oito conquistas. A seleção feminina, comandada por José Roberto Guimarães, terminou o ano com duas medalhas de prata, uma no Grand Prix outra no Campeonato Mundial. As seleções infanto-juvenil e juvenil femininas e a juvenil masculina conquistaram os Campeonatos Sul-Americanos. A equipe infanto-juvenil masculina ficou com a medalha de prata.</span>
-              <span class="fw-light">Ao todo, o voleibol brasileiro disputou 41 competições e subiu ao pódio 44 vezes, conquistando 15 medalhas de ouro, 14 de prata e 15 de bronze.</span>
-            </div>
-          </div>
-        </div>
       </div>  
       <!--Fim Carousel Noticias-->
-      <div class="noticia-1 d-flex justify-content-between mt-3">
-        <div class="noticia-item col-lg-3">
-          <div class="position-relative">
-              <img src="../static/img/noticia3.jpg" class="img-fluid">
-          </div>
-          <div class="p-2 mt-2 container-xxl">
-              <div class="d-flex justify-content-between mb-3">
+      
+      <div class="album py-5 ">
+        <div class="container">
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-5">
+            <div class="col">
+              <div class="card shadow-sm">
+                <svg class="bd-placeholder-img card-img-top" width="100%" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" style="background-image:url(../static/img/noticia3.jpg);"></svg>
+                <div class="card-body" style="height: 100px;">
+                  <p class="card-text">Seleção feminina vence Tailândia no encerramento da fase classificarória da Liga das Nações 2023.</p>
+                </div>
               </div>
-              <div class="d-flex mb-3">
-                  <a id="text-link" class=""  href="https://cbv.com.br/noticia/29528/selecao-feminina-vence-tailandia-no-encerramento-da-fase-classificatoria-da-liga-das-nacoes-2023">Partiu Fase Final</a>
+            </div>
+            <div class="col">
+              <div class="card shadow-sm">
+                <svg class="bd-placeholder-img card-img-top" width="100%" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" style="background-image: url(../static/img/noticia4.jpg);"></svg>
+                <div class="card-body" style="height: 100px;">
+                  <p class="card-text">Com Leal no  grupo, seleção masculina encara a Polônia pelas quartas de final da Liga das Naçoẽs.</p>
+                </div>
               </div>
-              <p class="text-white mb-4">Seleção feminina vence Tailândia no encerramento da fase classificarória da Liga das Nações 2023.</p>
-          </div>
+            </div>
+            <div class="col">
+              <div class="card shadow-sm">
+                <svg class="bd-placeholder-img card-img-top" width="100%" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false" x="50%" y="50%" fill="#eceeef" dy=".3em" style="background-image: url(../static/img/noticia6.jpg); background-size: cover; background-repeat: no-repeat;"></svg>
+                <div class="card-body" style="height: 100px;">
+                  <p class="card-text">Vôlei: Brasil vence Itália e vai à final do Mundial feminino.</p>
+                </div>
+              </div>
+            </div>
+            </div>
         </div>
-        <div class="noticia-item col-lg-3">
-          <div class="position-relative">
-              <img src="../static/img/noticia4.jpg" class="img-fluid">
-          </div>
-          <div class="p-2 mt-2 container-xxl">
-              <div class="d-flex justify-content-between mb-3">
+      </div>
+      <div class="album py-5 ">
+        <div class="container">
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-5">
+            <div class="col">
+              <div class="card shadow-sm">
+                <svg class="bd-placeholder-img card-img-top" width="100%" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" style="background-image:url(../static/img/noticia3.jpg);"></svg>
+                <div class="card-body" style="height: 100px;">
+                  <p class="card-text">Seleção feminina vence Tailândia no encerramento da fase classificarória da Liga das Nações 2023.</p>
+                </div>
               </div>
-              <div class="d-flex mb-3"> 
-                  <a id="text-link" class="" href="https://cbv.com.br/noticia/29565/circuito-mundial-de-volei-de-praia:-duda-e-taina-querem-medalhas-na-etapa-elite-do-canada-como-presentes-de-aniversario">De Volta</a>
+            </div>
+            <div class="col">
+              <div class="card shadow-sm">
+                <svg class="bd-placeholder-img card-img-top" width="100%" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" style="background-image: url(../static/img/noticia4.jpg);"></svg>
+                <div class="card-body" style="height: 100px;">
+                  <p class="card-text">Com Leal no  grupo, seleção masculina encara a Polônia pelas quartas de final da Liga das Naçoẽs.</p>
+                </div>
               </div>
-              <p class="text-white mb-4">Com Leal no  grupo, seleção masculina encara a Polônia pelas quartas de final da Liga das Naçoẽs.</p>
-          </div>
+            </div>
+            <div class="col">
+              <div class="card shadow-sm">
+                <svg class="bd-placeholder-img card-img-top" width="100%" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false" x="50%" y="50%" fill="#eceeef" dy=".3em" style="background-image: url(../static/img/noticia6.jpg); background-size: cover; background-repeat: no-repeat;"></svg>
+                <div class="card-body" style="height: 100px;">
+                  <p class="card-text">Vôlei: Brasil vence Itália e vai à final do Mundial feminino.</p>
+                </div>
+              </div>
+            </div>
+            </div>
         </div>
-        <div class="noticia-item col-lg-3">
-          <div class="position-relative">
-              <img src="../static/img/noticia6.jpg" class="img-fluid">
-          </div>
-          <div class="p-2 mt-2 container-xxl">
-              <div class="d-flex justify-content-between mb-3">
-              </div>
-              <div class="d-flex mb-3">
-                  <a id="text-link" class="" href="https://cbv.com.br/noticia/29528/selecao-feminina-vence-tailandia-no-encerramento-da-fase-classificatoria-da-liga-das-nacoes-2023">Só mais um passo.</a>
-              </div>
-              <p class="text-white mb-3">Vôlei: Brasil vence Itália e vai à final do Mundial feminino.</p>
-          </div>
-        </div>
-      </div> 
-      <!--Fim Noticias Itens-->
-
+      </div>
+      <!--Fim Noticias Itens--> 
       <!--Início Footer-->
       <footer class="container-fluid">
         <div class="justify-content-center text-white fw-light d-flex">
