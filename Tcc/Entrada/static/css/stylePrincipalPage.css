@@ -27,7 +27,11 @@ footer{
 
 #carousel-1{
     background-color: var(--corPrin);
-    margin-bottom: 100px;
+    margin-bottom: 6%;
+    border-bottom: 1px solid white;
+    display: flex;
+    justify-content: center;
+    text-align: center;
 }
 
 .iniNoticias{
@@ -83,7 +87,6 @@ a{
 .carousel-inner{
     display: flex;
     align-items: center;
-    margin: 10px;
 }
 
 .barra1{
@@ -113,14 +116,15 @@ a{
 }
 
 #div-who{
-    height: 46vw;
+    height: 100%;
     background-size: cover;
     background-repeat: no-repeat;
     border-top: 1px solid white;
+    border-bottom: 1px solid white;
 }
 
 .text-who2{
-    padding:  150px 0px 0px 0px;
+    padding:   0px 0px 0px;
 }
 
 #span-who{
@@ -152,4 +156,18 @@ a{
 
 #sla{
     background-color: rgba(0, 0, 0, 0.541);
+}
+
+.album, .card-body {
+    background-color: #041820;
+    color: white;
+}
+
+.card{
+    width: 110%;
+    margin-right: 3%;
+}
+
+#sec{
+    margin-bottom: 18%;
 }
