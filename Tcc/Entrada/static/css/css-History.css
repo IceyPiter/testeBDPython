@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+:root{
+    --corPrin: #041820;
+    --fontPrin: 'Quicksand', sans-serif;
+    --corSec: #263e7460;
+    --navbar-color: #ffffff;
+}
+
+body{
+    background-color: var(--corPrin);
+}
+
+footer{
+    height: 70px;
+    border-top: 1px solid white;
+    background-color: #041820;
+}
+
+#text-link{
+    font-size: 20px;
+    font-style: bold;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+.nav-item{
+    margin: 4px;
+}
+.linha{
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    background-color: #ff5733;
+    padding: 0px 0px 0px 0px;
+}
+
+.img-navbar{
+    display: flex;
+    margin-top: 10px;
+    margin-left: 40px;
+    margin-bottom: 10px;
+    width: 60px;
+    height: 60px;
+}
+
+.login{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    font-size: 18px;
+}
+
+.barra{
+    display: flex;
+    align-items: center;
+}
+
+.barra1{
+    padding: 0px 0px 0px 0px;
+}
+
+#spanOrange{
+    color:rgb(255, 166, 0);
+}
+
+.timeline {
+    position: relative;
+    margin: 50px auto;
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    border-top: 2px solid white;
+    padding: 30px;
+}
+
+.year {
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    color: white;
+}
+
+.year::before {
+    content: "▼";
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px;
+    cursor: pointer;
+    color: white;
+}
+
+.year:hover {
+    color: #F1EFEF;
+}
+
+.event-info {
+    display: none;
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-size: cover; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 100px;
+    border-radius: 4px;
+    width: 500px;
+    height: 450px; 
+    text-align: center;
+}
+
+.event-info h3, .event-info p {
+    margin-top: 0px; /* Reduz o espaço superior dos textos */
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    border-radius: 30px;
+}
+
+.text {
+    flex: 1.5;
+    font-size: 20px;
+    padding: 20px; /* Espaçamento ao redor do texto */
+    color: white;
+}
+
+#img-bola{
+    text-align: center;
+}
+
+.text-bola{
+    font-size: 12px;
+}
+
+.timeline-text{
+    margin-top: 100px;
+}
+
+#spanRed{
+    color: #952323;
+}
+
+.text-timeline{
+    background-color: rgba(36, 36, 36, 0.376);
+    border-radius: 10px;
+}
+
+#text-players{
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    color: gray;
+}

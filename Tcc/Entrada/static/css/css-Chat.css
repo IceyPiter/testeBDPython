@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+:root{
+    --corPrin: #041820;
+    --fontPrin: 'Quicksand', sans-serif;
+    --corSec: #263e7460;
+    --navbar-color: #ffffff;
+}
+
+body{
+    background-color: var(--corPrin);
+}
+
+footer{
+    height: 70px;
+    border-top: 1px solid white;
+    background-color: #041820;
+}
+
+#text-link{
+    font-size: 20px;
+    font-style: bold;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+.nav-item{
+    margin: 4px;
+}
+.linha{
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    background-color: #0687ff;
+    padding: 0px 0px 0px 0px;
+}
+
+.img-navbar{
+    display: flex;
+    margin-top: 10px;
+    margin-left: 40px;
+    margin-bottom: 10px;
+    width: 60px;
+    height: 60px;
+}
+
+.login{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    font-size: 18px;
+}
+
+.barra{
+    display: flex;
+    align-items: center;
+}
+
+.barra1{
+    padding: 0px 0px 0px 0px;
+}
+
+#spanOrange{
+    color:rgb(255, 166, 0);
+}
+
+.chat-message {
+    border: 1px solid #ccc;
+    margin: 10px;
+    padding: 10px;
+    width: 70%;
+    background-color: #4cd3fc;
+}
+
+.chat-response {
+    border: 1px solid #ccc;
+    margin: 10px;
+    padding: 10px;
+    width: 70%;
+    margin-left: 50px;
+    background-color: #099fcc;
+}
+
+.user-name {
+    font-weight: bold;
+    font-size: 12px;
+}
+.message-content {
+    font-size: 14px;
+    color: white;
+}
+.btn {
+    font-size: 10px;
+    text-decoration: none;
+}
+
+form{
+    align-items: center;
+}
+
+#sla{
+    align-items: center;
+}
+
+#mensagem{
+    width: 90%;
+}
