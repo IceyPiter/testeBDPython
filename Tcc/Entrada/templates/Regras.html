@@ -43,31 +43,28 @@
         <div class="collapse navbar-collapse" id="navbarScroll">
             <ul class="linha container-fluid navbar-nav me-auto my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 300px;">
                 <li class="nav-item">
-                    <a class="nav-item nav-link text-dark" id="texto-teste" href="{% url 'home' %}">Home</a>
+                    <a class="nav-item nav-link text-white" id="texto-teste" href="{% url 'home' %}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-item nav-link text-dark" id="texto-teste" href="{% url 'openHistory' %}">História</a>
+                    <a class="nav-item nav-link text-white" id="texto-teste" href="{% url 'openHistory' %}">História</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-item text-dark nav-link dropdown-toggle me-1" id="texto-teste"  href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-item text-white nav-link dropdown-toggle me-1" id="texto-teste"  href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Fundamentos
                     </a>
-                    <ul class="dropdown-menu" style="background-color: #b4b3b3;" aria-labelledby="navbarDropdown">
-                      <li><a class="dropdown-item text-dark" href="{% url 'openFundamentos' 1 %}">Recepção</a></li>
-                      <li><a class="dropdown-item text-dark" href="{% url 'openFundamentos' 2 %}">Saque</a></li>
-                      <li><a class="dropdown-item text-dark" href="{% url 'openFundamentos' 3 %}">Levantamento</a></li>
-                      <li><a class="dropdown-item text-dark" href="{% url 'openFundamentos' 4 %}">Bloqueio</a></li>
-                      <li><a class="dropdown-item text-dark" href="{% url 'openFundamentos' 5 %}">Ataque</a></li>
+                    <ul class="dropdown-menu" style="background-color: #192a50d7;" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item text-white" href="{% url 'openFundamentos' 1 %}">Recepção</a></li>
+                      <li><a class="dropdown-item text-white" href="{% url 'openFundamentos' 2 %}">Saque</a></li>
+                      <li><a class="dropdown-item text-white" href="{% url 'openFundamentos' 3 %}">Levantamento</a></li>
+                      <li><a class="dropdown-item text-white" href="{% url 'openFundamentos' 4 %}">Bloqueio</a></li>
+                      <li><a class="dropdown-item text-white" href="{% url 'openFundamentos' 5 %}">Ataque</a></li>
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-item nav-link text-dark" href="#" style="width: 120px;" id="texto-teste">Brasil no Vôlei</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-item nav-link text-dark" href="#" id="texto-teste">Referências</a>
+                    <a class="nav-item nav-link text-white" href="#" id="texto-teste">Referências</a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-item nav-link text-dark" id="texto-teste" style="width: 180px;" href="{% url 'openChat' %}">Chat da Comunidade</a>
+                    <a class="nav-item nav-link text-white" id="texto-teste" style="width: 180px;" href="{% url 'openChat' %}">Chat da Comunidade</a>
                 </li>
             </ul>
         </div>
@@ -81,23 +78,24 @@
         <p class="justify-content-center text-center text-white mt-5 mb-5">As regras são objeto de extrema importâcia em um esporte e, você pode conferir as do voleibol em <span><br><a id="spanOrange" href="https://institucional.cbv.com.br/arquivos/cobrav/quadra/regra_2021-2024_-_final.pdf?20221005064415">REGRAS OFICIAIS DE VOLEIBOL 2021-2024</a></span></p>
     </div>
     <div class="rules-container mt-3 mb-4">
-        <div class="rule  text-center" onclick="toggleRule(1)">   Quadra</div>
+        <div class="rule text-white text-center" onclick="toggleRule(1)">Quadra:</div>
         <div class="rule-content mt-4" style="margin-bottom: 30px;" id="rule-content-1">
-            <div class="container" style="height: 50vh;">
+            <div class="container">
                 <div class="text mt-2">
                   <div>
                     <p class="text-desc p text1-recep  fw-bold">Descrição:</p>
                     <p class="text-desc p text1-recep  fw-light mt-2"><i data-feather="circle"></i> Medidas: a quadra oficial de voleibol tem um formato de retângulo medindo 18m x 9m com 3m de largura em todos os lados como espaço livre;<br><i data-feather="circle"></i> Linha central: é a linha que divide a quadra em duas áreas de tamanhos iguais (9mX9m), onde está posicionada verticalmente a rede do jogo. As duas equipes se posicionam uma em cada lado da quadra;<br><i data-feather="circle"></i> Linha de Ataque: São duas linhas( uma de cada lado da quadra) localizadas 3m a partir da linha central. Também chamada de “zona da frente”, ela está paralela a linha central e representa onde os jogadores atacam;<br><i data-feather="circle"></i> Rede: Possui 1m de largura por 9,5m de comprimento, ela passa 25 a 50 cm fora da delimitação da quadra.<br><i data-feather="circle"></i> Altura da rede: Em jogos femininos a rede é posicionada a uma altura de 2,24m, em jogos masculinos a altura é de 2,43 (a altura é medida do chão até a borda superior da rede);<br><i data-feather="circle"></i> Antena: são 2 antenas, fixadas nos lados opostos da rede, alinhadas com a linha do chão, possuem 1,8m de comprimento. Sua função é delimitar o espaço lateral para passar a bola.<br><i data-feather="circle"></i> Postes: São utilizados para fixação da rede, possuem 2,33m de altura e estão localizados no chão distantes meio metro a um metro da linha central;</p>
                   </div>
                 </div>
-                <div class="image">
-                  <img class="img mb-1" src="../static/img/assetsPages/quadra-de-volei.webp" alt="Imagem">
-                </div>
+                
+            </div>
+            <div class="image">
+              <img class="img mb-1" src="../static/img/assetsPages/quadra-de-volei.webp" alt="Imagem">
             </div>
         </div>
-        <div class="rule  text-center" onclick="toggleRule(2)">   Equipes</div>
+        <div class="rule text-white  text-center" onclick="toggleRule(2)">Equipes:</div>
         <div class="rule-content mt-4" style="margin-bottom: 30px;" id="rule-content-2">
-            <div class="container" style="height: 8vh;">
+            <div class="container">
                 <div class="text mt-2">
                   <div>
                     <p class="text-desc p text1-recep  fw-bold">Descrição:</p>
@@ -106,9 +104,9 @@
                 </div>
             </div>
         </div>
-        <div class="rule  text-center" onclick="toggleRule(3)">   Posição De Jogadores</div>
+        <div class="rule text-white text-center" onclick="toggleRule(3)">Posição De Jogadores:</div>
         <div class="rule-content mt-4" style="margin-bottom: 30px;" id="rule-content-3">
-            <div class="container" style="height: 20vh;">
+            <div class="container">
                 <div class="text mt-2">
                   <div>
                     <p class="text-desc p text1-recep  fw-bold">Descrição:</p>
@@ -117,23 +115,23 @@
                 </div>
             </div>
         </div>
-        <div class="rule  text-center" onclick="toggleRule(4)">   Rotação</div>
+        <div class="rule text-white text-center" onclick="toggleRule(4)">Rotação:</div>
         <div class="rule-content mt-4" style="margin-bottom: 30px;" id="rule-content-4">
-            <div class="container" style="height: 30vh;">
+            <div class="container">
                 <div class="text mt-2">
                   <div>
                     <p class="text-desc p text1-recep  fw-bold">Descrição:</p>
                     <p class="text-desc p text1-recep  fw-light mt-2"><i data-feather="circle"></i> A rotação é o movimento dos jogadores de um time em sentido horário a fim de que cada jogador passe a ocupar a posição seguinte a sua;<br><i data-feather="circle"></i> A rotação básica ocorre todas as vezes em que uma equipe marca um ponto após o saque da equipe adversária;<br><i data-feather="circle"></i>  Se for o primeiro saque do set, a equipe não realiza a rotação;</p>
                   </div>
                 </div>
-                <div class="image">
-                  <img class="img mb-1" src="../static/img/assetsPages/rotacao2.png" alt="Imagem">
-                </div>
+            </div>
+            <div class="image">
+              <img class="img mb-1" src="../static/img/assetsPages/rotacao2.png" alt="Imagem">
             </div>
         </div>
-        <div class="rule text-center  mt-0" onclick="toggleRule(5)">Faltas</div>
+        <div class="rule text-center text-white mt-0" onclick="toggleRule(5)">Faltas:</div>
         <div class="rule-content mt-4" style="margin-bottom: 30px;" id="rule-content-5">
-            <div class="container" style="height: 30vh;">
+            <div class="container">
                 <div class="text mt-2">
                   <div>
                     <p class="text-desc p text1-recep  fw-bold">Descrição:</p>
@@ -142,9 +140,9 @@
                 </div>
             </div>
         </div>
-        <div class="rule text-center  mt-0" onclick="toggleRule(6)">Regras do Jogo:</div>
+        <div class="rule text-center text-white mt-0" onclick="toggleRule(6)">Regras do Jogo:</div>
         <div class="rule-content mt-4" style="margin-bottom: 30px;" id="rule-content-6">
-            <div class="container" style="height: 25vh;">
+            <div class="container">
                 <div class="text mt-2">
                   <div>
                     <p class="text-desc p text1-recep fw-bold">Descrição:</p>
@@ -153,9 +151,9 @@
                 </div>
             </div>
         </div>
-        <div class="rule text-center  mt-0" onclick="toggleRule(7)">Pontuação:</div>
+        <div class="rule text-center text-white mt-0" onclick="toggleRule(7)">Pontuação:</div>
         <div class="rule-content mt-4" style="margin-bottom: 30px;" id="rule-content-7">
-            <div class="container" style="height: 27vh;">
+            <div class="container">
                 <div class="text mt-2">
                   <div>
                     <p class="text-desc p text1-recep  fw-bold">Descrição:</p>
@@ -164,9 +162,9 @@
                 </div>
             </div>
         </div>
-        <div class="rule text-center mt-0" onclick="toggleRule(8)">Líbero:</div>
+        <div class="rule text-center text-white mt-0" onclick="toggleRule(8)">Líbero:</div>
         <div class="rule-content mt-2" style="margin-bottom: 20px;" id="rule-content-8">
-            <div class="container" style="height: 30vh;">
+            <div class="container">
                 <div class="text mt-2">
                   <div>
                     <p class="text-desc p text1-recep  fw-bold">Descrição:</p>
@@ -175,7 +173,7 @@
                 </div>
             </div>
         </div>
-        <div class="rule text-center  mt-0" onclick="toggleRule(9)">Equipe de arbitragem:</div>
+        <div class="rule text-center text-white mt-0" onclick="toggleRule(9)">Equipe de arbitragem:</div>
         <div class="rule-content mt-2" style="margin-bottom: 20px;" id="rule-content-9">
             <div class="container" style="height: 10vh;">
                 <div class="text mt-2">
@@ -186,9 +184,9 @@
                 </div>
             </div>
         </div>
-        <div class="rule text-center  mt-0" onclick="toggleRule(10)">Substituições:</div>
+        <div class="rule text-center text-white mt-0" onclick="toggleRule(10)">Substituições:</div>
         <div class="rule-content mt-0" style="margin-bottom: 10px;" id="rule-content-10">
-            <div class="container" style="height: 25vh;">
+            <div class="container">
                 <div class="text mt-1">
                   <div>
                     <p class="text-desc p text1-recep fw-bold">Descrição:</p>
