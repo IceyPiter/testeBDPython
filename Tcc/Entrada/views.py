@@ -31,6 +31,12 @@ def openFundamentos(request, caso):
     else:
         return render(request,'Fundamentos.html',{"caso1": False, "caso": caso})
 
+def openCurious(request):
+    if request.user.is_authenticated:
+        return render(request,'curiosidades.html',{"caso1": True})
+    else:
+        return render(request,'curiosidades.html',{"caso1": False})
+
 @login_required(login_url="openLogin")
 def openChat(request):
     mensages = Mensage.objects.all()
@@ -69,8 +75,7 @@ def cadastrar_user(request):
     user = User.objects.create_user(nomeForm, emailForm, senhaForm)
 
     user.save()
-    login(request,user)
-    return render(request, 'Voleibol.html', {"caso1": True})
+    return render(request, 'realizar_login.html')
 
 def envia_msg(request):
     mensagemForm = request.POST.get("msg")

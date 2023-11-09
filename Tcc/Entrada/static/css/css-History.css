@@ -136,6 +136,7 @@ a{
 
 #img-bola{
     text-align: center;
+    margin-top: 5%;
 }
 
 .text-bola{
@@ -151,7 +152,7 @@ a{
 }
 
 #spanBlue{
-    color: #78d6f8;
+    color: #ff6528;
 }
 
 .text-timeline{
@@ -169,11 +170,11 @@ a{
 }
 
 .list-group{
-    background-color: #78d6f8;
-    width: 500px;
-    display: flex;
+    margin-bottom: 3%;
 }
 
-#list-group-item{
-    font-size: 14px;
+.list-group-item{
+    font-size: 15px;
+    background-color: #272829;
+    color: white;
 }
