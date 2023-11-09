@@ -150,6 +150,10 @@ a{
     color: #952323;
 }
 
+#spanBlue{
+    color: #78d6f8;
+}
+
 .text-timeline{
     background-color: rgba(36, 36, 36, 0.376);
     border-radius: 10px;
@@ -162,4 +166,14 @@ a{
     text-align: center;
     align-items: center;
     color: gray;
+}
+
+.list-group{
+    background-color: #78d6f8;
+    width: 500px;
+    display: flex;
+}
+
+#list-group-item{
+    font-size: 14px;
 }
