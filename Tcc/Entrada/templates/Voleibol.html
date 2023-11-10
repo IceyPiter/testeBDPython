@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en w-100">
 <head>
@@ -7,13 +8,13 @@
     <title>Voleibol</title>
     <script src="https://unpkg.com/feather-icons"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="icon" href="../static/img/Volleyball-logo.png">
-    <link rel="stylesheet" href="../static/css/stylePrincipalPage.css">
+    <link rel="icon" href="{% static 'admin/img/Volleyball-logo.png' %}">
+    <link rel="stylesheet" href="{% static 'admin/css/stylePrincipalPage.css' %}">
 </head>
 
 <body>
   <div class="barra container-fluid d-flex">  
-    <img class="img-navbar d-inline-block" src="../static/img/Volleyball-logo.png" alt="">
+    <img class="img-navbar d-inline-block" src="{% static 'admin/img/Volleyball-logo.png' %}" alt="">
     <h3 class="text-white fw-light ms-3">WebVolei</h3>
     <div class="login container-fluid" style="margin-right: 60px;">
       <li class="nav-item dropdown d-flex align-items-center">
@@ -64,7 +65,7 @@
                 <a class="nav-item nav-link" href="{% url 'openCurious' %}" style="width: 120px;" id="texto-teste">Curiosidades</a>
               </li>
               <li class="nav-item">
-                <a class="nav-item nav-link" href="#" id="texto-teste">Referências</a>
+                <a class="nav-item nav-link" href="{% url 'openRefs' %}" id="texto-teste">Referências</a>
               </li>
               <li class="nav-item ">
                 <a class="nav-item nav-link" id="texto-teste" style="width: 180px;" href="{% url 'openChat' %}">Chat da Comunidade</a>
@@ -78,7 +79,7 @@
       <!--Fim Barra de Navegação-->
       
       <!--Início Descrição "WHO"-->
-      <div id="div-who" class="text-center" style=" background-image: url(../static/img/who.jpg);">
+      <div id="div-who" class="text-center" style=" background-image: url({% static 'admin/img/who.jpg' %})">
         <section id="sec" class="py-5 text-center container-lg">
           <div class="row py-lg-5">
             <div class="col-lg-6 col-md-8 mx-auto">
@@ -119,21 +120,21 @@
           </div>
           <div class="carousel-inner container-fluid">
             <div class="carousel-item active" id="carousel-border" data-bs-interval="2000">
-              <img src="../static/img/noticia7.jpg" class="d-block w-100" id="car-img" data-bs-interval="500" alt="...">
+              <img src="{% static 'admin/img/noticia7.jpg' %}" class="d-block w-100" id="car-img" data-bs-interval="500" alt="...">
               <div class="carousel-caption d-none d-md-block text-white" id="carousel-text">
                 <h5>Defendendo o título</h5>
                 <p>Convocados para defender o Brasil na Copa Pan-Americana, Thierry e Lukas Bergmann disputam o CBI sub-21 pelo Sesi-SP.</p>
               </div>
             </div>
             <div class="carousel-item" id="carousel-border" data-bs-interval="2000">
-              <img src="../static/img/noticia8.jpg" class="d-block w-100" id="car-img" data-bs-interval="500" alt="...">
+              <img src="{% static 'admin/img/noticia8.jpg' %}" class="d-block w-100" id="car-img" data-bs-interval="500" alt="...">
               <div class="carousel-caption d-none d-md-block text-white" id="carousel-text">
                 <h5>As mais jovens</h5>
                 <p>Aos 14 anos, gêmeas baianas são as caçulas da Copa Regional Nordeste 2, que reúne 28 duplas em Recife.</p>
               </div>
             </div>
             <div class="carousel-item" id="carousel-border" data-bs-interval="2000">
-              <img src="../static/img/noticia9.jpg" class="d-block w-100" id="car-img" data-bs-interval="500" alt="...">
+              <img src="{% static 'admin/img/noticia9.jpg' %}" class="d-block w-100" id="car-img" data-bs-interval="500" alt="...">
               <div class="carousel-caption d-none d-md-block text-white" id="carousel-text">
                 <h5>Segundo consecutivo</h5>
                 <p>Sesi-SP conquista o bicampeonato do CBI masculino sub-21.</p>
@@ -180,7 +181,7 @@
           <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-5">
             <div class="col">
               <div class="card shadow-sm">
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="250" xmlns="http://www.w3.org/2000/svg" id="not-img" role="img" aria-label="Placeholder: Thumbnail" style="background-image:url(../static/img/noticia3.jpg);"></svg>
+                <svg class="bd-placeholder-img card-img-top" width="100%" height="250" xmlns="http://www.w3.org/2000/svg" id="not-img" role="img" aria-label="Placeholder: Thumbnail" style="background-image:url({% static 'admin/img/noticia3.jpg' %});"></svg>
                 <div class="card-body" style="height: 115px;">
                   <p class="card-text">Seleção feminina vence Tailândia no encerramento da fase classificarória da Liga das Nações 2023.</p>
                 </div>
@@ -188,7 +189,7 @@
             </div>
             <div class="col">
               <div class="card shadow-sm">
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="250" xmlns="http://www.w3.org/2000/svg" id="not-img" role="img" aria-label="Placeholder: Thumbnail" style="background-image: url(../static/img/noticia4.jpg);"></svg>
+                <svg class="bd-placeholder-img card-img-top" width="100%" height="250" xmlns="http://www.w3.org/2000/svg" id="not-img" role="img" aria-label="Placeholder: Thumbnail" style="background-image: url({% static 'admin/img/noticia4.jpg' %});"></svg>
                 <div class="card-body" style="height: 115px;">
                   <p class="card-text">Com Leal no  grupo, seleção masculina encara a Polônia pelas quartas de final da Liga das Nações.</p>
                 </div>
@@ -196,7 +197,7 @@
             </div>
             <div class="col">
               <div class="card shadow-sm">
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="250" xmlns="http://www.w3.org/2000/svg" id="not-img" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" style="background-image: url(../static/img/noticia6.jpg);"></svg>
+                <svg class="bd-placeholder-img card-img-top" width="100%" height="250" xmlns="http://www.w3.org/2000/svg" id="not-img" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" style="background-image: url({% static 'admin/img/noticia6.jpg' %});"></svg>
                 <div class="card-body" style="height: 115px;">
                   <p class="card-text">Vôlei: Brasil vence Itália e vai à final do Mundial feminino.</p>
                 </div>
@@ -204,7 +205,7 @@
             </div>
             <div class="col">
               <div class="card shadow-sm">
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="250" xmlns="http://www.w3.org/2000/svg" id="not-img" role="img" aria-label="Placeholder: Thumbnail" style="background-image:url(../static/img/noticia5.jpg);"></svg>
+                <svg class="bd-placeholder-img card-img-top" width="100%" height="250" xmlns="http://www.w3.org/2000/svg" id="not-img" role="img" aria-label="Placeholder: Thumbnail" style="background-image:url({% static 'admin/img/noticia5.jpg' %});"></svg>
                 <div class="card-body" style="height: 115px;">
                   <p class="card-text">Seleção feminina vence Tailândia no encerramento da fase classificarória da Liga das Nações 2023.</p>
                 </div>
@@ -212,7 +213,7 @@
             </div>
             <div class="col">
               <div class="card shadow-sm">
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="250" xmlns="http://www.w3.org/2000/svg" id="not-img" role="img" aria-label="Placeholder: Thumbnail" style="background-image: url(../static/img/noticia4.jpg);"></svg>
+                <svg class="bd-placeholder-img card-img-top" width="100%" height="250" xmlns="http://www.w3.org/2000/svg" id="not-img" role="img" aria-label="Placeholder: Thumbnail" style="background-image: url({% static 'admin/img/noticia4.jpg' %});"></svg>
                 <div class="card-body" style="height: 115px;">
                   <p class="card-text">Com Leal no  grupo, seleção masculina encara a Polônia pelas quartas de final da Liga das Nações.</p>
                 </div>
@@ -220,7 +221,7 @@
             </div>
             <div class="col">
               <div class="card shadow-sm">
-                <svg class="bd-placeholder-img card-img-top" width="100%" height="250" xmlns="http://www.w3.org/2000/svg" id="not-img" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" style="background-image: url(../static/img/noticia6.jpg); background-size: cover; background-repeat: no-repeat;"></svg>
+                <svg class="bd-placeholder-img card-img-top" width="100%" height="250" xmlns="http://www.w3.org/2000/svg" id="not-img" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" style="background-image: url({% static 'admin/img/noticia6.jpg' %}); background-size: cover; background-repeat: no-repeat;"></svg>
                 <div class="card-body" style="height: 115px;">
                   <p class="card-text">Vôlei: Brasil vence Itália e vai à final do Mundial feminino.</p>
                 </div>

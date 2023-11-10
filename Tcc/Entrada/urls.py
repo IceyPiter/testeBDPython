@@ -9,6 +9,7 @@ urlpatterns = [
     path('openHistory/', views.openHistory, name="openHistory"),
     path('openRegras/', views.openRegras, name="openRegras"),
     path('openCurious/', views.openCurious, name="openCurious"),
+    path('openRefs/', views.openRefs, name="openRefs"),
     path('openFundamentos/<str:caso>', views.openFundamentos, name="openFundamentos"),
     path('openMsg/', views.openMsg, name="openMsg"),
     path('openLogin/', views.openLogin, name="openLogin"),

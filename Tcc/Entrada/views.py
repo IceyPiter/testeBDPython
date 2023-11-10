@@ -37,6 +37,12 @@ def openCurious(request):
     else:
         return render(request,'curiosidades.html',{"caso1": False})
 
+def openRefs(request):
+    if request.user.is_authenticated:
+        return render(request,'references.html',{"caso1": True})
+    else:
+        return render(request,'references.html',{"caso1": False})
+
 @login_required(login_url="openLogin")
 def openChat(request):
     mensages = Mensage.objects.all()
