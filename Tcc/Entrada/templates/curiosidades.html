@@ -10,14 +10,14 @@
   <script src="https://unpkg.com/feather-icons"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <link rel="icon" href="../static/img/Volleyball-logo.png">
-  <link rel="stylesheet" href="../static/css/css-History.css">
+  <link rel="icon" href="{% static 'admin/img/Volleyball-logo.png' %}">
+  <link rel="stylesheet" href="{% static 'admin/css/css-History.css' %}">
   </link>
 </head>
 
 <body>
   <div class="barra container-fluid d-flex">
-    <img class="img-navbar d-inline-block" src="../static/img/Volleyball-logo.png" width="30" height="30" alt="">
+    <img class="img-navbar d-inline-block" src="{% static 'admin/img/Volleyball-logo.png' %}" width="30" height="30" alt="">
     <h3 class="text-white fw-light ms-3">WebVolei</h3>
     <div class="login container-fluid" style="margin-right: 60px;">
       <li class="nav-item dropdown d-flex align-items-center">
@@ -41,22 +41,19 @@
 
   <nav class="navbar navbar-expand-lg navbar-light p-0">
     <div class="barra1 container-fluid">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
-        aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarScroll">
-        <ul class="linha container-fluid navbar-nav me-auto my-lg-0 navbar-nav-scroll"
-          style="--bs-scroll-height: 300px;">
+        <ul class="linha container-fluid navbar-nav me-auto my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 300px;">
           <li class="nav-item">
             <a class="nav-item nav-link text-white" href="{% url 'home' %}">Home</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-item nav-link text-white" id="texto-teste" href="{% url 'openHistory' %}">História</a>
+          <li class="nav-item"> 
+            <a class="nav-item nav-link" id="texto-teste" href="{% url 'openHistory' %}">História</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-item nav-link dropdown-toggle me-1 text-white" href="#" id="navbarDropdown" role="button"
-              data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-item nav-link dropdown-toggle me-1" id="texto-teste"  href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Fundamentos
             </a>
             <ul class="dropdown-menu" style="background-color: #192a50d7;" aria-labelledby="navbarDropdown">
@@ -68,17 +65,19 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-item nav-link text-white" href="{% url 'openRegras' %}">Regras</a>
+            <a class="nav-item nav-link" href="{% url 'openRegras' %}" id="texto-teste">Regras</a>
           </li>
           <li class="nav-item">
-            <a class="nav-item nav-link text-white" href="#">Referências</a>
+            <a class="nav-item nav-link" href="{% url 'openCurious' %}" style="width: 120px;" id="texto-teste">Curiosidades</a>
           </li>
           <li class="nav-item">
-            <a class="nav-item nav-link text-white" href="{% url 'openChat' %}" style="width: 180px;">Chat da
-              Comunidade</a>
+            <a class="nav-item nav-link" href="{% url 'openRefs' %}" id="texto-teste">Referências</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-item nav-link" id="texto-teste" style="width: 180px;" href="{% url 'openChat' %}">Chat da Comunidade</a>
           </li>
           <div id="form" class="container-xxl justify-content-end">
-          </div>
+         </div>
         </ul>
       </div>
     </div>
@@ -95,7 +94,7 @@
           Brasil;</p>
 
         <div id="img-bola">
-          <img class="mb-1" src="../static/img/assetsPages/cur1.jpg" style="width:500px;" alt="Imagem">
+          <img class="mb-1" src="{% static 'admin/img/assetsPages/cur1.jpg' %}" style="width:500px;" alt="Imagem">
         </div>
         <a href="https://jogohoje.com/outros-esportes/serginho-escadinha/" id="text-players" class="p fw-bold">Fonte:
           Estão abertas as inscrições para o Projeto Viva Vôlei de Angra dos Reis - A Voz da Cidade</a>
@@ -103,7 +102,7 @@
           65-67 centímetros.</p>
 
         <div id="img-bola">
-          <img class="mb-1" src="../static/img/assetsPages/cur2.png" style="width:500px;" alt="Imagem">
+          <img class="mb-1" src="{% static 'admin/img/assetsPages/cur2.png' %}" style="width:500px;" alt="Imagem">
         </div>
         <a href="https://ge.globo.com/volei/noticia/2023/02/17/fofao-e-anunciada-como-tecnica-da-selecao-feminina-sub-17.ghtml"
           id="text-players" class=" p fw-bold">Fonte: Calendário do Circuito Mundial de vôlei de praia 2021
@@ -112,7 +111,7 @@
           na década de 1920.</p>
 
         <div id="img-bola">
-          <img class="mb-1" src="../static/img/assetsPages/cur3.png" style="width:500px;" alt="Imagem">
+          <img class="mb-1" src="{% static 'admin/img/assetsPages/cur3.png' %}" style="width:500px;" alt="Imagem">
         </div>
         <a href="https://terceirotempo.uol.com.br/que-fim-levou/bernard-rajzman-933" id="text-players"
           class="p fw-bold">Fonte: Olimpíadas 1976 - Polônia x Japão (semifinal) - partidas de vôlei (em dvd)
@@ -122,7 +121,7 @@
           durou 4 horas e 36 minutos; </p>
 
         <div id="img-bola">
-          <img class="mb-1" src="../static/img/assetsPages/cur4.png" style="width:500px;" alt="Imagem">
+          <img class="mb-1" src="{% static 'admin/img/assetsPages/cur4.png' %}" style="width:500px;" alt="Imagem">
         </div>
         <a href="https://esportes.r7.com/olimpiadas/idolo-do-volei-giba-anuncia-aposentadoria-23082021"
           id="text-players" class="p fw-bold">Fonte: Brasil vence a China na estreia do vôlei sentado masculino |
@@ -131,7 +130,7 @@
           deficiências físicas. É um esporte Paralímpico.</p>
 
         <div id="img-bola">
-          <img class="mb-1" src="../static/img/assetsPages/cur5.png" style="width:500px;" alt="Imagem">
+          <img class="mb-1" src="{% static 'admin/img/assetsPages/cur5.png' %}" style="width:500px;" alt="Imagem">
         </div>
         <a href="https://vivadigitalsa.com.br/jose-roberto-guimaraes-biografia-titulos-e-historia-no-volei/"
           id="text-players" class="p fw-bold">Fonte: FIVB define grupos do Pré-Olímpico de vôlei feminino; veja os
@@ -140,7 +139,7 @@
           títulos em competições importantes.</p>
 
         <div id="img-bola">
-          <img class="mb-1" src="../static/img/assetsPages/cur6.png" style="width:500px;" alt="Imagem">
+          <img class="mb-1" src="{% static 'admin/img/assetsPages/cur6.png' %}" style="width:500px;" alt="Imagem">
         </div>
         <a href="https://vivadigitalsa.com.br/jose-roberto-guimaraes-biografia-titulos-e-historia-no-volei/"
           id="text-players" class="p fw-bold">Fonte: Como fazer Cortada no Voleibol: Cortada Perfeita | DEF
@@ -152,23 +151,23 @@
       </div>
     </div>
   </div>
-  <div class="d-flex justify-content-center mt">
+  <div class="d-flex justify-content-center">
     <ul class="list-group">
       <li class="list-group-item text-center py-2">----Lista de Medalhas: Brasil----</li>
-      <li class="list-group-item text-center py-2">Ouro Masculino: 3 medalhas de ouro (Barcelona
+      <li class="list-group-item text-center py-2"><img id="img-medals" src="{% static 'admin/img/assetsPages/medalha-de-ouro.png' %}" alt="ouro"> Ouro Masculino: 3 medalhas de ouro (Barcelona
         1992, Atenas 2004 e Rio de Janeiro 2016).</li>
-      <li class="list-group-item text-center py-2">Ouro Feminino: 2 medalhas de ouro (Pequim 2008
+      <li class="list-group-item text-center py-2"><img id="img-medals" src="{% static 'admin/img/assetsPages/medalha-de-ouro.png' %}" alt="ouro"> Ouro Feminino: 2 medalhas de ouro (Pequim 2008
         e
         Londres 2012).</li>
-      <li class="list-group-item text-center py-2">Prata Masculino: 2 medalhas de prata (Los
+      <li class="list-group-item text-center py-2"><img id="img-medals" src="{% static 'admin/img/assetsPages/medalha-de-prata.png' %}" alt="prata"> Prata Masculino: 2 medalhas de prata (Los
         Angeles 1984 e Pequim 2008).</li>
-      <li class="list-group-item text-center py-2">Prata Feminino: 2 medalhas de prata (Los
+      <li class="list-group-item text-center py-2"><img id="img-medals" src="{% static 'admin/img/assetsPages/medalha-de-prata.png' %}" alt="prata"> Prata Feminino: 2 medalhas de prata (Los
         Angeles
         1984 e Atlanta 1996).</li>
-      <li class="list-group-item text-center py-2">Bronze Masculino: 2 medalhas de bronze
+      <li class="list-group-item text-center py-2"><img id="img-medals" src="{% static 'admin/img/assetsPages/medalha-de-bronze.png' %}" alt="bronze"> Bronze Masculino: 2 medalhas de bronze
         (Atlanta
         1996 e Londres 2012).</li>
-      <li class="list-group-item text-center py-2">Bronze Masculino: 2 medalhas de bronze
+      <li class="list-group-item text-center py-2"><img id="img-medals" src="{% static 'admin/img/assetsPages/medalha-de-bronze.png' %}" alt="bronze"> Bronze Masculino: 2 medalhas de bronze
         (Atlanta
         1996 e Londres 2012).</li>
     </ul>
@@ -177,29 +176,31 @@
   <!-- Fim do Brasil no Volei -->
 
   <footer class="container-fluid">
-    <div class="text-white fw-light">
-      <div class="text-center">
-        <div class="text-center d-flex justify-content-center">
-          <div class="me-3 mt-2">
-            <h5 style="font-size: larger;">Contatos: </h5>
+    <div class="justify-content-center text-white fw-light d-flex">
+        <div class="text-center">
+          <div class="text-center d-flex justify-content-center">
+            <div class="me-3 mt-2"><a id="contato" href="https://github.com/IceyPiter"><i data-feather="github"></i> GitHub</a></div>
+            <div class="me-3 mt-2"><a id="contato" href="https://twitter.com/MoraesMichalski?t=QQjbt5rUnsjlaBzuRChZ4g&s=09"><i data-feather="twitter"></i> Twitter</a></div>
+            <div class="me-3 mt-2"><a id="contato" href="https://instagram.com/dpedromichalski?utm_source=qr&iqshid=MzNINGNkZWQ4Mg%3D%3D"><i data-feather="instagram"></i> Instagram</a></div>
           </div>
-          <div class="me-3 mt-2"><a href="https://github.com/IceyPiter"><i data-feather="github"></i> GitHub</a></div>
-          <div class="me-3 mt-2"><a href="https://twitter.com/MoraesMichalski?t=QQjbt5rUnsjlaBzuRChZ4g&s=09"><i
-                data-feather="twitter"></i> Twitter</a></div>
-          <div class="me-3 mt-2"><a
-              href="https://instagram.com/dpedromichalski?utm_source=qr&iqshid=MzNINGNkZWQ4Mg%3D%3D"><i
-                data-feather="instagram"></i> Instagram</a></div>
+          <h5 style="font-size:13px; font-style: oblique; font-weight: lighter; margin-top: 10px;">Developed By Piter &#169 2023</h5>
         </div>
-        <h5 style="font-size:13px; font-style: oblique; font-weight: lighter; margin-top: 10px;">Developed By Piter
-          &#169 2023</h5>
-      </div>
+        <h3 class="traco fw-bold me-3">-</h3>
+        <div class="text-center">
+          <div class="text-center d-flex justify-content-center">
+            <div class="me-3 mt-2"><a id="contato" href="https://github.com/Linkadah"><i data-feather="github"></i> GitHub</a></div>
+            <div id="contato" class="me-3 mt-2"><a id="contato" href="https://www.twitch.tv/linkadah_?sr=a"><i data-feather="twitch"></i> Twitch</a></div>
+            <div class="me-3 mt-2"><a id="contato" href="https://instagram.com/_krlachristinacomh?igshid=MzRlODBiNWFlZA=="><i data-feather="instagram"></i> Instagram</a></div>
+          </div>
+          <h5 style="font-size:13px; font-style: oblique; font-weight: lighter; margin-top: 10px;">Developed By Carla &#169 2023</h5>
+        </div>
     </div>
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
     crossorigin="anonymous"></script>
   <script>feather.replace()</script>
-  <script src="../static/js/script.js"></script>
+  <script src="{% static 'admin/js/script.js' %}"></script>
 </body>
 
 </html>

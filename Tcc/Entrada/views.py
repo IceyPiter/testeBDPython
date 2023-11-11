@@ -83,6 +83,7 @@ def cadastrar_user(request):
     user.save()
     return render(request, 'realizar_login.html')
 
+@login_required(login_url="openLogin")
 def envia_msg(request):
     mensagemForm = request.POST.get("msg")
     idMensagem = request.POST.get("idresponse")

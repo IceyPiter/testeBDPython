@@ -9,12 +9,12 @@
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <meta name="description" content="Site sobre Voleibol - TCC, Informática">
-    <link rel="icon" href="../static/img/Volleyball-logo.png">
+    <link rel="icon" href="{% static 'admin/img/Volleyball-logo.png' %}">
     <title>Cadastro</title>
-    <link rel="stylesheet" href="../static/css/css-login.css">
+    <link rel="stylesheet" href="{% static 'admin/css/css-login.css' %}">
 </head>
 
-<body style="background-image: url(../static/img/bola.jpg); background-size: cover; background-repeat: no-repeat;">
+<body style="background-image: url({% static 'admin/img/bola.jpg' %}); background-size: cover; background-repeat: no-repeat;">
     <!-- CONTAINER DO LOGIN -->
         <div class="container d-flex align-items-center justify-content-center" style="height: 100vh;">
             <div class="home h4 fixed-top mt-3 ms-4 text-white fw-light">
@@ -57,6 +57,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
         crossorigin="anonymous"></script>
-    <script src="../static/js/script.js"></script>
+    <script src="{% static 'admin/js/script.js' %}"></script>
 </body>
 </html>
