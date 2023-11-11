@@ -24,9 +24,27 @@ footer{
     color: #ffffff;
 }
 
+#texto-teste:hover{
+    color: #96B6C5;
+}
+
+#texto-teste{
+    color: white;
+}
+
+@media (max-width: 991px) {
+    .barra {
+        background-color: #ff5733;
+    }
+}
+
 a{
     text-decoration: none;
     color: white;
+}
+
+.navbar-toggler-icon{
+    background-color: #949494a4;
 }
 
 .nav-item{
@@ -97,6 +115,24 @@ a{
     color: white;
 }
 
+/* Remove a quebra de linha em telas menores */
+@media (max-width: 768px) {
+    .timeline {
+        flex-wrap: nowrap;
+        overflow-x: auto; /* Adiciona rolagem horizontal se os itens não couberem */
+    }
+
+    .year {
+        width: 80%; /* Reduz a largura dos itens em telas menores */
+        margin: 0 auto 20px auto; /* Centraliza os itens e adiciona espaçamento abaixo */
+    }
+
+    .year::before {
+        left: 50%; /* Centraliza a seta para baixo */
+        transform: translateX(-50%);
+    }
+}
+
 .year:hover {
     color: #F1EFEF;
 }
@@ -116,6 +152,17 @@ a{
 
 .event-info h3, .event-info p {
     margin-top: 0px; /* Reduz o espaço superior dos textos */
+}
+
+/* Adiciona um ajuste de largura e altura para telas menores */
+@media (max-width: 768px) {
+    .event-info {
+        padding: 20px; /* Reduz o padding para ajustar a largura em telas menores */
+        width: 150%; /* Ajusta a largura para 80% do contêiner pai em telas menores */
+        max-width: 300px; /* Define uma largura máxima para o bloco */
+        height: auto; /* Permite que a altura se ajuste proporcionalmente */
+        max-height: 300px; /* Define uma altura máxima para o bloco */
+    }
 }
 
 .container {
@@ -171,10 +218,20 @@ a{
 
 .list-group{
     margin-bottom: 3%;
+    margin-right: 6%;
 }
 
 .list-group-item{
     font-size: 15px;
     background-color: #272829;
     color: white;
+    width: 120%;
+    
+}
+
+#img-medals{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }

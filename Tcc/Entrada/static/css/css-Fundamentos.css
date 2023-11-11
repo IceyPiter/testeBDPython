@@ -24,9 +24,19 @@ footer{
     color: #ffffff;
 }
 
+@media (max-width: 991px) {
+    .barra {
+        background-color: #ff5733;
+    }
+}
+
 a{
     text-decoration: none;
     color: white;
+}
+
+.navbar-toggler-icon{
+    background-color: #949494a4;
 }
 
 .nav-item{
@@ -87,6 +97,14 @@ img {
     height: auto;
 }
 
+#texto-teste:hover{
+    color: #96B6C5;
+}
+
+#texto-teste{
+    color: white;
+}
+
 .text {
     flex: 1.5;
     font-size: 20px;
@@ -96,6 +114,21 @@ img {
     color: white;
 }
 
+/* Media query para telas menores */
+@media (max-width: 850px) {
+    .container {
+        flex-direction: column; /* Mudar para uma coluna em telas menores */
+    }
+
+    .image {
+        order: 2; /* Altera a ordem da exibição para ir para baixo */
+        margin-top: 20px; /* Adiciona um espaçamento entre texto e imagem */
+    }
+
+    .text {
+        margin-bottom: 20px; /* Adiciona espaçamento abaixo do texto */
+    }
+}
 .p {
     margin: 0;
     text-align: justify;
@@ -135,4 +168,8 @@ img {
 
 .video-text{
     border-radius: 30px 0 0 30px;
+}
+
+.circulo{
+    width: 20px;
 }

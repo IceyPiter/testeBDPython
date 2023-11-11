@@ -29,6 +29,10 @@ a{
     color: white;
 }
 
+.navbar-toggler-icon{
+    background-color: #949494a4;
+}
+
 .nav-item{
     margin: 4px;
 }
@@ -79,15 +83,59 @@ a{
 #text-refs{
     font-size: 18px;
     display: flex;
-    justify-content: center;
-    text-align: center;
     color: white;
+    margin-bottom: 10%;
     margin: 4%;
+    align-items: center;
 }
 
-#div-refs{
+@media (max-width: 890px) {
+    #text-refs {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 991px) {
+    .barra {
+        background-color: #ff5733;
+    }
+}
+
+.referencias-container {
+    display: flex;
+    margin-left: auto;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    max-width: 1000px;
+    width: 100%;
+    text-align: justify; /* ou mova isto para .referencias, dependendo do seu requisito */
+}
+
+.referencias {
+    width: 100%;
+    color: white;
+    /* O estilo de justificação foi movido para .referencias-container */
+}
+
+.subtitle{
+    display: flex;
     justify-content: center;
     text-align: center;
-    align-items: center;
+    margin-top: 5%;
+}
+
+.meio{
+    display: flex;
+    justify-content: center;
     width: 100%;
+    align-items: center;
+}
+
+#texto-teste:hover{
+    color: #96B6C5;
+}
+
+#texto-teste{
+    color: white;
 }

@@ -24,9 +24,27 @@ footer{
     color: #ffffff;
 }
 
+#texto-teste:hover{
+    color: #96B6C5;
+}
+
+#texto-teste{
+    color: white;
+}
+
+@media (max-width: 991px) {
+    .barra {
+        background-color: #ff5733;
+    }
+}
+
 a{
     text-decoration: none;
     color: white;
+}
+
+.navbar-toggler-icon{
+    background-color: #949494a4;
 }
 
 .nav-item{
@@ -35,7 +53,7 @@ a{
 .linha{
     border-top: 1px solid white;
     border-bottom: 1px solid white;
-    background-color: #0687ff;
+    background-color: #ff5733;
     padding: 0px 0px 0px 0px;
 }
 
@@ -72,8 +90,8 @@ a{
     border: 1px solid #ccc;
     margin: 10px;
     padding: 10px;
-    width: 70%;
-    background-color: #4cd3fc;
+    width: 80%;
+    background-color: white;
 }
 
 .chat-response {
@@ -81,8 +99,8 @@ a{
     margin: 10px;
     padding: 10px;
     width: 70%;
-    margin-left: 50px;
-    background-color: #099fcc;
+    margin-left: 3%;
+    background-color: #D0D4CA;
 }
 
 .user-name {
@@ -91,11 +109,13 @@ a{
 }
 .message-content {
     font-size: 14px;
-    color: white;
+    color: black;
 }
 .btn {
     font-size: 10px;
     text-decoration: none;
+    background-color: #B4B4B3;
+    border-color: #B4B4B3;
 }
 
 form{
@@ -108,4 +128,12 @@ form{
 
 #mensagem{
     width: 90%;
+}
+
+#con{
+    width: 100%;
+}
+
+#enMen{
+    width: 100%;
 }

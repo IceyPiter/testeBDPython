@@ -115,6 +115,7 @@ a{
 #texto-teste{
     color: white;
 }
+
 #texto-teste:hover{
     color: #96B6C5;
 }
@@ -174,7 +175,17 @@ a{
 
 .album, .card-body {
     background-color: #041820;
-    color: white;
+    color:white;
+}
+
+@media (max-width: 991px) {
+    .barra {
+        background-color: #ff5733;
+    }
+}
+
+.navbar-toggler-icon{
+    background-color: #949494a4;
 }
 
 .card{
@@ -183,13 +194,14 @@ a{
 }
 
 #sec{
-    margin-bottom: 16%;
+    margin-bottom: 25%;
     width: 100%;
 }
 
 #not-img {
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: top center;
 }
 
 #not-gen{
@@ -212,4 +224,22 @@ a{
     border-bottom: 1px solid black;
     margin-left: 15px;
     margin-right: 15px;
+}
+
+.card-text{
+    font-size: 18px;
+    margin-bottom: 2px;
+}
+
+.card-text:hover{
+    color: #96B6C5  ;
+}
+
+.card-body{
+    height: 150px;
+}
+
+.data{
+    font-size: 16px;
+    color: #949494a4;
 }

@@ -17,6 +17,14 @@ footer{
     background-color: #041820;
 }
 
+#texto-teste:hover{
+    color: #96B6C5;
+}
+
+#texto-teste{
+    color: white;
+}
+
 #text-link{
     font-size: 20px;
     font-style: bold;
@@ -24,9 +32,19 @@ footer{
     color: #ffffff;
 }
 
+@media (max-width: 991px) {
+    .barra {
+        background-color: #ff5733;
+    }
+}
+
 a{
     text-decoration: none;
     color: white;
+}
+
+.navbar-toggler-icon{
+    background-color: #949494a4;
 }
 
 .nav-item{
@@ -125,4 +143,8 @@ img {
 
 .text-desc{
     font-size: 15px;
+}
+
+.circulo{
+    width: 20px;
 }
